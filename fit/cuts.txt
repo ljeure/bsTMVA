@@ -1,0 +1,308 @@
+cuts for 20-100:---------------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+  CUTPP=$CUTPP" && Dtrk1Pt>1.4333605376279011 && DRestrk1Pt>0.79498445211263946 && DRestrk2Pt>-0.16839316511584243 && DtktkRespt>7.4876919193134013 && Dchi2cl>0.051877095088209965 && DtktkRes_chi2cl>0.043875813873122525 && Dalpha<0.19901631453815385 && DtktkRes_alpha<0.20033708713612908 && DsvpvDistance/DsvpvDisErr>4.2886529427781674 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.2021808603204787"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+  CUTPP=$CUTPP" && Dtrk1Pt>1.7489730338695255 && DRestrk1Pt>0.75012587514718798 && DRestrk2Pt>0.051937053456556026 && DtktkRespt>7.9247551660715212 && Dchi2cl>0.070759678013823671 && DtktkRes_chi2cl>0.045287276623085862 && Dalpha<0.13732255456091383 && DtktkRes_alpha<0.20050916993655524 && DsvpvDistance/DsvpvDisErr>3.2530841533473254 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>4.3072197748217356"
+
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > -.04"
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP > .96"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .24"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB > .8"
+fi
+
+
+
+cuts for 20-50----------------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.4632018244104419 && DRestrk1Pt>0.19185652430280253 && DRestrk2Pt>0.24147685699712929 && DtktkRespt>7.6286832815374126 && Dchi2cl>0.064031121050877687 && DtktkRes_chi2cl>0.047026987965696286 && Dalpha<0.20190072270682416 && DtktkRes_alpha<0.20111827635415475 && DsvpvDistance/DsvpvDisErr>4.2250997900921057 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.2365726792449023"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.7089420180701691 && DRestrk1Pt>0.28475390382324484 && DRestrk2Pt>0.37946919487276964 && DtktkRespt>8.4456949289764243 && Dchi2cl>0.064668009979991448 && DtktkRes_chi2cl>0.05379214420949649 && Dalpha<0.19097020447772792 && DtktkRes_alpha<0.19654962547078003 && DsvpvDistance/DsvpvDisErr>3.4058372725505714 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.1726310808079146"
+
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > -.08"
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP > .92"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .24"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB > .36"
+fi
+
+cuts for 20-30 ----------------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.4135835341793053 && DRestrk1Pt>0.4598208841557635 && DRestrk2Pt>0.29774819321246487 && DtktkRespt>7.7977257533596198 && Dchi2cl>0.052593800953129002 && DtktkRes_chi2cl>0.042132893927521141 && Dalpha<0.1301448467345141 && DtktkRes_alpha<0.20181470865634474 && DsvpvDistance/DsvpvDisErr>3.6617328141555481 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.1327656091631368"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.5176023357927331 && DRestrk1Pt>0.8986229827278237 && DRestrk2Pt>0.56739683319105483 && DtktkRespt>7.9883281948352804 && Dchi2cl>0.051390479914441116 && DtktkRes_chi2cl>0.046376926498428235 && Dalpha<0.1530866309780822 && DtktkRes_alpha<0.19631135962804641 && DsvpvDistance/DsvpvDisErr>3.5843373334615656 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.1364232715983951"
+
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > -.24"
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP > .84"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .24"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB > .36 "
+fi
+
+
+
+CROSS SECTION ANALYSIS (with eta<1.5)
+cuts for 20-40 ----------------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.5119066783466506 && DRestrk1Pt>0.30536377790210678 && DRestrk2Pt>0.36338212403760983 && DtktkRespt>7.8250794441627303 && Dchi2cl>0.051459643814556165 && DtktkRes_chi2cl>0.043374341702374246 && Dalpha<0.19826644414562558 && DtktkRes_alpha<0.20011998802556244 && DsvpvDistance/DsvpvDisErr>3.1977048738596423 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.2666225677967122"
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.4844397710905781 && DRestrk1Pt>1.1235527445660458 && DRestrk2Pt>0.47124198653284882 && DtktkRespt>7.9203352686361228 && Dchi2cl>0.069173950728496747 && DtktkRes_chi2cl>0.058931826062455228 && Dalpha<0.15566915489397984 && DtktkRes_alpha<0.19714307317206459 && DsvpvDistance/DsvpvDisErr>3.7061885740403979 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>4.3363138312246523"
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > "
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP >"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .2"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB >  "
+fi
+
+#cuts for 40-100 ----------------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>3.1283988174549324 && DRestrk1Pt>0.87633860909130834 && DRestrk2Pt>0.49219084823940806 && DtktkRespt>7.4482612362135594 && Dchi2cl>0.042252454543442439 && DtktkRes_chi2cl>0.055413157979800419 && Dalpha<0.075990655431829757 && DtktkRes_alpha<0.1960009217583123 && DsvpvDistance/DsvpvDisErr>2.9228773605879357 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>2.9237382468189037"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>2.2832389864149776 && DRestrk1Pt>1.1785505053073921 && DRestrk2Pt>0.11226191496246736 && DtktkRespt>7.9509242348913354 && Dchi2cl>0.048233308827930033 && DtktkRes_chi2cl>0.047793650985811807 && Dalpha<0.12148664710213197 && DtktkRes_alpha<0.18348806753328883 && DsvpvDistance/DsvpvDisErr>2.8109177447134006 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.7490936393580707"
+
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > "
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP >"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .36"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB >  "
+fi
+#cuts for 10-15 ----------------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>0.92153454026559412 && DRestrk1Pt>0.87582523416956648 && DRestrk2Pt>0.67955102087364527 && DtktkRespt>7.9703249845641588 && Dchi2cl>0.048096148324835303 && DtktkRes_chi2cl>0.053732027004078767 && Dalpha<0.073629326267062187 && DtktkRes_alpha<0.19830344586882093 && DsvpvDistance/DsvpvDisErr>5.1097036191157628 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.1501549099000044"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.3267258132381521 && DRestrk1Pt>0.59496275484541306 && DRestrk2Pt>0.61654018664760468 && DtktkRespt>8.004476438177015 && Dchi2cl>0.079828209041295797 && DtktkRes_chi2cl>0.051215631548746025 && Dalpha<0.072446107033781432 && DtktkRes_alpha<0.18920495358371209 && DsvpvDistance/DsvpvDisErr>4.3425859559377988 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>1.5441747774718637"
+
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > "
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP >"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .04"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB >  "
+fi
+#cuts for 15-20 ----------------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.1769508323267215 && DRestrk1Pt>0.4967023525503147 && DRestrk2Pt>0.39046239070969135 && DtktkRespt>7.9533424123326384 && Dchi2cl>0.043858958123795373 && DtktkRes_chi2cl>0.043151381204515879 && Dalpha<0.081597806070864198 && DtktkRes_alpha<0.20103730287740149 && DsvpvDistance/DsvpvDisErr>2.6724468018584711 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>2.3168995223678879"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>2.3170705656871102 && DRestrk1Pt>0.60080866903897268 && DRestrk2Pt>0.34514955119647112 && DtktkRespt>8.1132923836150503 && Dchi2cl>0.057988272342992454 && DtktkRes_chi2cl>0.053023889609986281 && Dalpha<0.16350691515542917 && DtktkRes_alpha<0.19839796655225722 && DsvpvDistance/DsvpvDisErr>2.7681832761976963 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>2.415025544981896"
+
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > "
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP >"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .28"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB >  "
+fi
+
+
+#eta analysis with Dy:
+20-100 eta as variables--------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+  CUTPP=$CUTPP" && Dtrk1Pt>1.6895522537308205 && DRestrk1Pt>0.84031338681733003 && DRestrk2Pt>-0.19704445193327663 && DtktkRespt>7.8528812603344429 && Dchi2cl>0.048708611970225621 && DtktkRes_chi2cl>0.049529709539947606 && Dalpha<0.20016788953458109 && DtktkRes_alpha<0.19977244360529264 && DsvpvDistance/DsvpvDisErr>2.9937475547073209 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.3877793894046793 && TMath::Abs(Dtrk1Eta)<1.7103344328578156 && TMath::Abs(DRestrk1Eta)<1.3476875660734604 && TMath::Abs(DRestrk2Eta)<1.4994677264288225 && TMath::Abs(Dy)<0.99720114144555405"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+ CUTPP=$CUTPP" && Dtrk1Pt>1.8333716361064025 && DRestrk1Pt>0.84465772363317748 && DRestrk2Pt>0.51578785235437252 && DtktkRespt>8.4284403601126066 && Dchi2cl>0.048262600354809157 && DtktkRes_chi2cl>0.04124329183022625 && Dalpha<0.17620462990089575 && DtktkRes_alpha<0.19292705562354709 && DsvpvDistance/DsvpvDisErr>3.3523405540524651 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.1797924701695415 && TMath::Abs(Dtrk1Eta)<1.431334401123 && TMath::Abs(DRestrk1Eta)<1.035695861292254 && TMath::Abs(DRestrk2Eta)<1.307839093769761 && TMath::Abs(Dy)<0.98031140668372296"
+ 
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > "
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP >"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .2"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB >  "
+fi
+
+#20-100 eta as sole variables--------------------------------------------------------
+
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && TMath::Abs(Dtrk1Eta)<1.4994522210775576 && TMath::Abs(DRestrk1Eta)<1.1710479117275256 && TMath::Abs(DRestrk2Eta)<1.5180633374261123 && TMath::Abs(Dy)<1.0002828879185079"
+
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+echo
+ 
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > "
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP >"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .36"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB >  "
+fi

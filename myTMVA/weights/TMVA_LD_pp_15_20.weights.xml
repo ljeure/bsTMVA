@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<MethodSetup Method="LD::LD">
+  <GeneralInfo>
+    <Info name="TMVA Release" value="4.2.0 [262656]"/>
+    <Info name="ROOT Release" value="6.02/13 [393741]"/>
+    <Info name="Creator" value="leure"/>
+    <Info name="Date" value="Thu Jun  8 20:00:57 2017"/>
+    <Info name="Host" value="Linux vocms029.cern.ch 2.6.32-504.12.2.el6.x86_64 #1 SMP Thu Mar 12 07:33:00 CET 2015 x86_64 x86_64 x86_64 GNU/Linux"/>
+    <Info name="Dir" value="/data/leure/TMVA_Luke/myTMVA"/>
+    <Info name="Training events" value="2320"/>
+    <Info name="TrainingTime" value="4.17804718e-03"/>
+    <Info name="AnalysisType" value="Classification"/>
+  </GeneralInfo>
+  <Options>
+    <Option name="V" modified="Yes">False</Option>
+    <Option name="VerbosityLevel" modified="No">Default</Option>
+    <Option name="VarTransform" modified="Yes">None</Option>
+    <Option name="H" modified="Yes">True</Option>
+    <Option name="CreateMVAPdfs" modified="Yes">True</Option>
+    <Option name="IgnoreNegWeightsInTraining" modified="No">False</Option>
+  </Options>
+  <Variables NVar="10">
+    <Variable VarIndex="0" Expression="Dtrk1Pt" Label="Dtrk1Pt" Title="Dtrk1Pt" Unit="" Internal="Dtrk1Pt" Type="F" Min="5.00997126e-01" Max="1.22764292e+01"/>
+    <Variable VarIndex="1" Expression="DRestrk1Pt" Label="DRestrk1Pt" Title="DRestrk1Pt" Unit="" Internal="DRestrk1Pt" Type="F" Min="6.60297811e-01" Max="1.87841835e+01"/>
+    <Variable VarIndex="2" Expression="DRestrk2Pt" Label="DRestrk2Pt" Title="DRestrk2Pt" Unit="" Internal="DRestrk2Pt" Type="F" Min="5.03957272e-01" Max="1.80702095e+01"/>
+    <Variable VarIndex="3" Expression="DtktkRespt" Label="DtktkRespt" Title="DtktkRespt" Unit="" Internal="DtktkRespt" Type="F" Min="8.01337337e+00" Max="2.00275936e+01"/>
+    <Variable VarIndex="4" Expression="Dchi2cl" Label="Dchi2cl" Title="Dchi2cl" Unit="" Internal="Dchi2cl" Type="F" Min="5.00634536e-02" Max="9.98736560e-01"/>
+    <Variable VarIndex="5" Expression="DtktkRes_chi2cl" Label="DtktkRes_chi2cl" Title="DtktkRes_chi2cl" Unit="" Internal="DtktkRes_chi2cl" Type="F" Min="5.03618643e-02" Max="9.99740005e-01"/>
+    <Variable VarIndex="6" Expression="Dalpha" Label="Dalpha" Title="Dalpha" Unit="" Internal="Dalpha" Type="F" Min="9.73608549e-05" Max="1.99530050e-01"/>
+    <Variable VarIndex="7" Expression="DtktkRes_alpha" Label="DtktkRes_alpha" Title="DtktkRes_alpha" Unit="" Internal="DtktkRes_alpha" Type="F" Min="1.24814943e-03" Max="1.99770436e-01"/>
+    <Variable VarIndex="8" Expression="DsvpvDistance/DsvpvDisErr" Label="DsvpvDistance/DsvpvDisErr" Title="DsvpvDistance/DsvpvDisErr" Unit="" Internal="DsvpvDistance_D_DsvpvDisErr" Type="F" Min="2.00035477e+00" Max="1.86669785e+02"/>
+    <Variable VarIndex="9" Expression="DtktkRes_svpvDistance/DtktkRes_svpvDisErr" Label="DtktkRes_svpvDistance/DtktkRes_svpvDisErr" Title="DtktkRes_svpvDistance/DtktkRes_svpvDisErr" Unit="" Internal="DtktkRes_svpvDistance_D_DtktkRes_svpvDisErr" Type="F" Min="2.00586510e+00" Max="9.64862823e+01"/>
+  </Variables>
+  <Spectators NSpec="0"/>
+  <Classes NClass="2">
+    <Class Name="Signal" Index="0"/>
+    <Class Name="Background" Index="1"/>
+  </Classes>
+  <Transformations NTransformations="0"/>
+  <MVAPdfs>
+    <PDF Name="LD_PDFSig" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="LD_tr_S_original" NBins="50" XMin="-6.3575291633605957e-01" XMax="3.8716641068458557e-01" HasEquidistantBins="1">
+        0.00000000e+00 1.19584979e-02 1.19584979e-02 0.00000000e+00 2.39169958e-02 1.19584979e-02 2.39169958e-02 0.00000000e+00 8.37094851e-02 7.17509873e-02 4.25789138e-01 5.21457121e-01 5.93208109e-01 3.10920945e-01 3.58754936e-01 4.66381417e-01 5.50090902e-01 1.36579369e+00 7.65343864e-01 8.13177856e-01 1.98291879e+00 2.00683579e+00 2.52357612e+00 3.17185993e+00 1.71983184e+00 3.27948642e+00 2.31303995e+00 1.52125416e+00 1.73650712e+00 2.92544826e+00 1.25092549e+00 2.55945162e+00 2.66236131e+00 1.26288399e+00 1.85137531e+00 2.07386999e+00 1.08350652e+00 1.30600120e+00 1.12662373e+00 9.71163256e-01 1.07878974e+00 8.51578277e-01 2.03294464e-01 4.13830641e-01 9.56679830e-02 7.17509873e-02 3.77955147e-01 2.39169958e-02 1.19584979e-02 1.19584979e-02 
+      </Histogram>
+    </PDF>
+    <PDF Name="LD_PDFBkg" MinNSmooth="10" MaxNSmooth="10" InterpolMethod="2" KDE_type="1" KDE_iter="1" KDE_border="1" KDE_finefactor="1.0000000000000000e+00">
+      <Histogram Name="LD_tr_B_original" NBins="50" XMin="-6.3575291633605957e-01" XMax="3.8716641068458557e-01" HasEquidistantBins="1">
+        1.74570393e-01 0.00000000e+00 3.49140785e-01 1.57113353e+00 5.23711178e-01 1.04742236e+00 2.09484471e+00 2.79312628e+00 2.26941510e+00 2.96769668e+00 4.88797099e+00 5.58625256e+00 4.01511903e+00 3.84054864e+00 4.18968942e+00 2.61855589e+00 3.49140785e+00 1.22199275e+00 1.39656314e+00 1.57113353e+00 5.23711178e-01 1.74570393e-01 1.74570393e-01 1.74570393e-01 1.74570393e-01 3.49140785e-01 0.00000000e+00 0.00000000e+00 1.74570393e-01 0.00000000e+00 1.74570393e-01 0.00000000e+00 1.74570393e-01 0.00000000e+00 1.74570393e-01 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 0.00000000e+00 
+      </Histogram>
+    </PDF>
+  </MVAPdfs>
+  <Weights NOut="1" NCoeff="11">
+    <Coefficient IndexOut="0" IndexCoeff="0" Value="1.0113114229451031e-01"/>
+    <Coefficient IndexOut="0" IndexCoeff="1" Value="2.1692995678653543e-02"/>
+    <Coefficient IndexOut="0" IndexCoeff="2" Value="3.6573481126809249e-02"/>
+    <Coefficient IndexOut="0" IndexCoeff="3" Value="2.9887820747193317e-02"/>
+    <Coefficient IndexOut="0" IndexCoeff="4" Value="-6.4027663456089456e-02"/>
+    <Coefficient IndexOut="0" IndexCoeff="5" Value="1.6880528878483930e-01"/>
+    <Coefficient IndexOut="0" IndexCoeff="6" Value="7.4330814406016743e-03"/>
+    <Coefficient IndexOut="0" IndexCoeff="7" Value="-1.1866747168856415e+00"/>
+    <Coefficient IndexOut="0" IndexCoeff="8" Value="3.4041442386548759e-01"/>
+    <Coefficient IndexOut="0" IndexCoeff="9" Value="-3.8535746249949987e-04"/>
+    <Coefficient IndexOut="0" IndexCoeff="10" Value="2.5943421389978405e-03"/>
+  </Weights>
+</MethodSetup>

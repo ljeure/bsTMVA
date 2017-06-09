@@ -1,0 +1,1330 @@
+-- Processing pT bin: 10 - 20 GeV/c
+
+
+Processing TMVAClassification.C++(0,10,20)...
+
+==> Start TMVAClassification
+--- Factory                  : You are running ROOT Version: 6.02/13, Jun 24, 2015
+--- Factory                  : 
+--- Factory                  : _/_/_/_/_/ _|      _|  _|      _|    _|_|   
+--- Factory                  :    _/      _|_|  _|_|  _|      _|  _|    _| 
+--- Factory                  :   _/       _|  _|  _|  _|      _|  _|_|_|_| 
+--- Factory                  :  _/        _|      _|    _|  _|    _|    _| 
+--- Factory                  : _/         _|      _|      _|      _|    _| 
+--- Factory                  : 
+--- Factory                  : ___________TMVA Version 4.2.0, Sep 19, 2013
+--- Factory                  : 
+--- TMVAClassification       : Using input file: /net/hisrv0001/home/tawei/scratch/HeavyFlavor/Run2Ana/BtoDAna/samples/Dntuple_20170428_pp_BuToD0Pi_20151212_v2_DfinderMC_pp_20170423_BtoD0Pi_Dpt5Dy1Tketa2_pthatweight.root & /net/hisrv0001/home/tawei/scratch/HeavyFlavor/Run2Ana/BtoDAna/samples/Dntuple_20170428_HeavyFlavor_DfinderData_pp_20170423_BtoD0Pi_Dpt10Dy1Alpha0p2Svpv2Tketa1p5EvtSkim.root
+--- DataSetInfo              : Added class "Signal"	 with internal class number 0
+--- Factory                  : Add Tree ntBptoD0pi of type Signal with 219367 events
+--- DataSetInfo              : Added class "Background"	 with internal class number 1
+--- Factory                  : Add Tree ntBptoD0pi of type Background with 70567 events
+--- Factory                  : Preparing trees for training and testing...
+--- Factory                  : Booking method: [1mCutsGA[0m
+--- CutsGA                   : Use optimization method: "Genetic Algorithm"
+--- CutsGA                   : Use efficiency computation method: "Event Selection"
+--- CutsGA                   : Use "FMax" cuts for variable: 'Dtrk1Pt'
+--- CutsGA                   : Use "FMax" cuts for variable: 'DRestrk1Pt'
+--- CutsGA                   : Use "FMax" cuts for variable: 'DRestrk2Pt'
+--- CutsGA                   : Use "FMax" cuts for variable: 'DtktkRespt'
+--- CutsGA                   : Use "FMax" cuts for variable: 'Dchi2cl'
+--- CutsGA                   : Use "FMax" cuts for variable: 'DtktkRes_chi2cl'
+--- CutsGA                   : Use "FMin" cuts for variable: 'Dalpha'
+--- CutsGA                   : Use "FMin" cuts for variable: 'DtktkRes_alpha'
+--- CutsGA                   : Use "FMax" cuts for variable: 'DsvpvDistance/DsvpvDisErr'
+--- CutsGA                   : Use "FMax" cuts for variable: 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr'
+--- Factory                  : Booking method: [1mCutsSA[0m
+--- CutsSA                   : Use optimization method: "Genetic Algorithm"
+--- CutsSA                   : Use efficiency computation method: "Event Selection"
+--- CutsSA                   : Use "FMax" cuts for variable: 'Dtrk1Pt'
+--- CutsSA                   : Use "FMax" cuts for variable: 'DRestrk1Pt'
+--- CutsSA                   : Use "FMax" cuts for variable: 'DRestrk2Pt'
+--- CutsSA                   : Use "FMax" cuts for variable: 'DtktkRespt'
+--- CutsSA                   : Use "FMax" cuts for variable: 'Dchi2cl'
+--- CutsSA                   : Use "FMax" cuts for variable: 'DtktkRes_chi2cl'
+--- CutsSA                   : Use "FMin" cuts for variable: 'Dalpha'
+--- CutsSA                   : Use "FMin" cuts for variable: 'DtktkRes_alpha'
+--- CutsSA                   : Use "FMax" cuts for variable: 'DsvpvDistance/DsvpvDisErr'
+--- CutsSA                   : Use "FMax" cuts for variable: 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr'
+--- Factory                  : Booking method: [1mLD[0m
+--- DataSetFactory           : Splitmode is: "RANDOM" the mixmode is: "SAMEASSPLITMODE"
+--- DataSetFactory           : Create training and testing trees -- looping over class "Signal" ...
+--- DataSetFactory           : Weight expression for class 'Signal': "pthatweight"
+[1;31m--- <WARNING> DataSetFactory           : Expression: Dtrk1Pt does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: DRestrk1Pt does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: DRestrk2Pt does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: DtktkRespt does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: Dchi2cl does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: DtktkRes_chi2cl does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: Dalpha does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: DtktkRes_alpha does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: DsvpvDistance/DsvpvDisErr does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: DtktkRes_svpvDistance/DtktkRes_svpvDisErr does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: (abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && TMath::Abs(Dy)<1.0 && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 && abs(Dtrk1Eta)<1.0 && abs(DRestrk1Eta)<1.0 && abs(DRestrk2Eta)<1.0 && Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 &&Dgen==23333)&&Dpt>10.000000&&Dpt<20.000000 does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Please check class "Signal" cut "(abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && TMath::Abs(Dy)<1.0 && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 && abs(Dtrk1Eta)<1.0 && abs(DRestrk1Eta)<1.0 && abs(DRestrk2Eta)<1.0 && Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 &&Dgen==23333)&&Dpt>10.000000&&Dpt<20.000000[0m
+[1;31m--- <WARNING> DataSetFactory           : Expression: (abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && TMath::Abs(Dy)<1.0 && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 && abs(Dtrk1Eta)<1.0 && abs(DRestrk1Eta)<1.0 && abs(DRestrk2Eta)<1.0 && Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 &&(Dmass-5.279)>0.2&&(Dmass-5.279)<0.5&& (HLT_DmesonPPTrackingGlobal_Dpt8_v1 || HLT_DmesonPPTrackingGlobal_Dpt15_v1 || HLT_DmesonPPTrackingGlobal_Dpt20_v1 || HLT_DmesonPPTrackingGlobal_Dpt30_v1 || HLT_DmesonPPTrackingGlobal_Dpt50_v1))&&Dpt>10.000000&&Dpt<20.000000 does not provide data for this event. This event is not taken into account. --> please check if you use as a variable an entry of an array which is not filled for some events (e.g. arr[4] when arr has only 3 elements).[0m
+[1;31m--- <WARNING> DataSetFactory           : If you want to take the event into account you can do something like: "Alt$(arr[4],0)" where in cases where arr doesn't have a 4th element,  0 is taken as an alternative.[0m
+[1;31m--- <WARNING> DataSetFactory           : Please check class "Background" cut "(abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && TMath::Abs(Dy)<1.0 && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 && abs(Dtrk1Eta)<1.0 && abs(DRestrk1Eta)<1.0 && abs(DRestrk2Eta)<1.0 && Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 &&(Dmass-5.279)>0.2&&(Dmass-5.279)<0.5&& (HLT_DmesonPPTrackingGlobal_Dpt8_v1 || HLT_DmesonPPTrackingGlobal_Dpt15_v1 || HLT_DmesonPPTrackingGlobal_Dpt20_v1 || HLT_DmesonPPTrackingGlobal_Dpt30_v1 || HLT_DmesonPPTrackingGlobal_Dpt50_v1))&&Dpt>10.000000&&Dpt<20.000000[0m
+--- DataSetFactory           : Create training and testing trees -- looping over class "Background" ...
+--- DataSetFactory           : Weight expression for class 'Background': ""
+--- DataSetFactory           : Number of events in input trees (after possible flattening of arrays):
+--- DataSetFactory           :     Signal          -- number of events       : 2901501  / sum of weights: 1.63533e+08
+--- DataSetFactory           :     Background      -- number of events       : 76817  / sum of weights: 76817
+--- DataSetFactory           :     Signal     tree -- total number of entries: 219367
+--- DataSetFactory           :     Background tree -- total number of entries: 70567
+--- DataSetFactory           : Preselection: (will NOT affect number of requested training and testing events)
+--- DataSetFactory           :     Signal     requirement: "(abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && TMath::Abs(Dy)<1.0 && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 && abs(Dtrk1Eta)<1.0 && abs(DRestrk1Eta)<1.0 && abs(DRestrk2Eta)<1.0 && Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 &&Dgen==23333)&&Dpt>10.000000&&Dpt<20.000000"
+--- DataSetFactory           :     Signal          -- number of events passed: 3408   / sum of weights: 537194
+--- DataSetFactory           :     Signal          -- efficiency             : 0.00328493
+--- DataSetFactory           :     Background requirement: "(abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && TMath::Abs(Dy)<1.0 && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 && abs(Dtrk1Eta)<1.0 && abs(DRestrk1Eta)<1.0 && abs(DRestrk2Eta)<1.0 && Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 &&(Dmass-5.279)>0.2&&(Dmass-5.279)<0.5&& (HLT_DmesonPPTrackingGlobal_Dpt8_v1 || HLT_DmesonPPTrackingGlobal_Dpt15_v1 || HLT_DmesonPPTrackingGlobal_Dpt20_v1 || HLT_DmesonPPTrackingGlobal_Dpt30_v1 || HLT_DmesonPPTrackingGlobal_Dpt50_v1))&&Dpt>10.000000&&Dpt<20.000000"
+--- DataSetFactory           :     Background      -- number of events passed: 1149   / sum of weights: 1149 
+--- DataSetFactory           :     Background      -- efficiency             : 0.0149576
+--- DataSetFactory           :  you have opted for interpreting the requested number of training/testing events
+--- DataSetFactory           :  to be the number of events AFTER your preselection cuts
+--- DataSetFactory           :  you have opted for interpreting the requested number of training/testing events
+--- DataSetFactory           :  to be the number of events AFTER your preselection cuts
+--- DataSetFactory           : Weight renormalisation mode: "NumEvents": renormalises all event classes 
+--- DataSetFactory           :  such that the effective (weighted) number of events in each class equals the respective 
+--- DataSetFactory           :  number of events (entries) that you demanded in PrepareTrainingAndTestTree("","nTrain_Signal=.. )
+--- DataSetFactory           :  ... i.e. such that Sum[i=1..N_j]{w_i} = N_j, j=0,1,2...
+--- DataSetFactory           :  ... (note that N_j is the sum of TRAINING events (nTrain_j...with j=Signal,Background..
+--- DataSetFactory           :  ..... Testing events are not renormalised nor included in the renormalisation factor! )
+--- DataSetFactory           : --> Rescale Signal     event weights by factor: 0.0064172
+--- DataSetFactory           : --> Rescale Background event weights by factor: 1
+--- DataSetFactory           : Number of training and testing events after rescaling:
+--- DataSetFactory           : ------------------------------------------------------
+--- DataSetFactory           : Signal     -- training events            : 1704 (sum of weights: 1704) - requested were 0 events
+--- DataSetFactory           : Signal     -- testing events             : 1704 (sum of weights: 271660) - requested were 0 events
+--- DataSetFactory           : Signal     -- training and testing events: 3408 (sum of weights: 273364)
+--- DataSetFactory           : Signal     -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.00117456
+--- DataSetFactory           : Background -- training events            : 574 (sum of weights: 574) - requested were 0 events
+--- DataSetFactory           : Background -- testing events             : 574 (sum of weights: 574) - requested were 0 events
+--- DataSetFactory           : Background -- training and testing events: 1148 (sum of weights: 1148)
+--- DataSetFactory           : Background -- due to the preselection a scaling factor has been applied to the numbers of requested events: 0.0149576
+--- DataSetFactory           : Create internal training tree
+--- DataSetFactory           : Create internal testing tree
+--- DataSetInfo              : Correlation matrix (Signal):
+--- DataSetInfo              : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              :                                            Dtrk1Pt DRestrk1Pt DRestrk2Pt DtktkRespt Dchi2cl DtktkRes_chi2cl  Dalpha DtktkRes_alpha DsvpvDistance/DsvpvDisErr DtktkRes_svpvDistance/DtktkRes_svpvDisErr
+--- DataSetInfo              :                                   Dtrk1Pt:  +1.000     -0.082     -0.179     -0.350  -0.001          +0.045  +0.024         +0.378                    +0.163                                    +0.165
+--- DataSetInfo              :                                DRestrk1Pt:  -0.082     +1.000     -0.724     +0.386  +0.054          +0.070  -0.081         -0.154                    +0.031                                    +0.133
+--- DataSetInfo              :                                DRestrk2Pt:  -0.179     -0.724     +1.000     +0.356  -0.045          -0.054  -0.020         -0.200                    -0.013                                    -0.121
+--- DataSetInfo              :                                DtktkRespt:  -0.350     +0.386     +0.356     +1.000  +0.012          +0.022  -0.136         -0.475                    +0.025                                    +0.017
+--- DataSetInfo              :                                   Dchi2cl:  -0.001     +0.054     -0.045     +0.012  +1.000          -0.036  +0.010         -0.077                    -0.010                                    +0.009
+--- DataSetInfo              :                           DtktkRes_chi2cl:  +0.045     +0.070     -0.054     +0.022  -0.036          +1.000  -0.056         +0.067                    +0.072                                    +0.075
+--- DataSetInfo              :                                    Dalpha:  +0.024     -0.081     -0.020     -0.136  +0.010          -0.056  +1.000         -0.084                    -0.519                                    -0.469
+--- DataSetInfo              :                            DtktkRes_alpha:  +0.378     -0.154     -0.200     -0.475  -0.077          +0.067  -0.084         +1.000                    +0.384                                    +0.137
+--- DataSetInfo              :                 DsvpvDistance/DsvpvDisErr:  +0.163     +0.031     -0.013     +0.025  -0.010          +0.072  -0.519         +0.384                    +1.000                                    +0.772
+--- DataSetInfo              : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:  +0.165     +0.133     -0.121     +0.017  +0.009          +0.075  -0.469         +0.137                    +0.772                                    +1.000
+--- DataSetInfo              : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              : Correlation matrix (Background):
+--- DataSetInfo              : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetInfo              :                                            Dtrk1Pt DRestrk1Pt DRestrk2Pt DtktkRespt Dchi2cl DtktkRes_chi2cl  Dalpha DtktkRes_alpha DsvpvDistance/DsvpvDisErr DtktkRes_svpvDistance/DtktkRes_svpvDisErr
+--- DataSetInfo              :                                   Dtrk1Pt:  +1.000     -0.025     -0.076     -0.164  +0.010          +0.013  +0.338         +0.148                    +0.014                                    +0.030
+--- DataSetInfo              :                                DRestrk1Pt:  -0.025     +1.000     -0.810     +0.335  -0.015          -0.010  -0.102         -0.006                    -0.032                                    +0.050
+--- DataSetInfo              :                                DRestrk2Pt:  -0.076     -0.810     +1.000     +0.281  +0.013          +0.013  -0.015         -0.168                    -0.007                                    -0.032
+--- DataSetInfo              :                                DtktkRespt:  -0.164     +0.335     +0.281     +1.000  -0.004          +0.004  -0.192         -0.282                    -0.066                                    +0.031
+--- DataSetInfo              :                                   Dchi2cl:  +0.010     -0.015     +0.013     -0.004  +1.000          -0.041  +0.043         -0.053                    -0.040                                    -0.020
+--- DataSetInfo              :                           DtktkRes_chi2cl:  +0.013     -0.010     +0.013     +0.004  -0.041          +1.000  -0.036         -0.079                    +0.003                                    +0.086
+--- DataSetInfo              :                                    Dalpha:  +0.338     -0.102     -0.015     -0.192  +0.043          -0.036  +1.000         +0.162                    -0.043                                    +0.082
+--- DataSetInfo              :                            DtktkRes_alpha:  +0.148     -0.006     -0.168     -0.282  -0.053          -0.079  +0.162         +1.000                    +0.047                                    -0.101
+--- DataSetInfo              :                 DsvpvDistance/DsvpvDisErr:  +0.014     -0.032     -0.007     -0.066  -0.040          +0.003  -0.043         +0.047                    +1.000                                    +0.049
+--- DataSetInfo              : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:  +0.030     +0.050     -0.032     +0.031  -0.020          +0.086  +0.082         -0.101                    +0.049                                    +1.000
+--- DataSetInfo              : ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- DataSetFactory           :  
+--- Factory                  : Booking method: [1mMLP[0m
+--- MLP                      : Create Transformation "N" with events from all classes.
+--- Norm                     : Transformation, Variable selection : 
+--- Norm                     : Input : variable 'Dtrk1Pt' (index=0).   <---> Output : variable 'Dtrk1Pt' (index=0).
+--- Norm                     : Input : variable 'DRestrk1Pt' (index=1).   <---> Output : variable 'DRestrk1Pt' (index=1).
+--- Norm                     : Input : variable 'DRestrk2Pt' (index=2).   <---> Output : variable 'DRestrk2Pt' (index=2).
+--- Norm                     : Input : variable 'DtktkRespt' (index=3).   <---> Output : variable 'DtktkRespt' (index=3).
+--- Norm                     : Input : variable 'Dchi2cl' (index=4).   <---> Output : variable 'Dchi2cl' (index=4).
+--- Norm                     : Input : variable 'DtktkRes_chi2cl' (index=5).   <---> Output : variable 'DtktkRes_chi2cl' (index=5).
+--- Norm                     : Input : variable 'Dalpha' (index=6).   <---> Output : variable 'Dalpha' (index=6).
+--- Norm                     : Input : variable 'DtktkRes_alpha' (index=7).   <---> Output : variable 'DtktkRes_alpha' (index=7).
+--- Norm                     : Input : variable 'DsvpvDistance/DsvpvDisErr' (index=8).   <---> Output : variable 'DsvpvDistance/DsvpvDisErr' (index=8).
+--- Norm                     : Input : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).   <---> Output : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).
+--- MLP                      : Building Network
+--- MLP                      : Initializing weights
+--- Factory                  : Booking method: [1mBDT[0m
+--- Factory                  : Booking method: [1mBDTB[0m
+--- Factory                  : 
+--- Factory                  : current transformation string: 'I'
+--- Factory                  : Create Transformation "I" with events from all classes.
+--- Id                       : Transformation, Variable selection : 
+--- Id                       : Input : variable 'Dtrk1Pt' (index=0).   <---> Output : variable 'Dtrk1Pt' (index=0).
+--- Id                       : Input : variable 'DRestrk1Pt' (index=1).   <---> Output : variable 'DRestrk1Pt' (index=1).
+--- Id                       : Input : variable 'DRestrk2Pt' (index=2).   <---> Output : variable 'DRestrk2Pt' (index=2).
+--- Id                       : Input : variable 'DtktkRespt' (index=3).   <---> Output : variable 'DtktkRespt' (index=3).
+--- Id                       : Input : variable 'Dchi2cl' (index=4).   <---> Output : variable 'Dchi2cl' (index=4).
+--- Id                       : Input : variable 'DtktkRes_chi2cl' (index=5).   <---> Output : variable 'DtktkRes_chi2cl' (index=5).
+--- Id                       : Input : variable 'Dalpha' (index=6).   <---> Output : variable 'Dalpha' (index=6).
+--- Id                       : Input : variable 'DtktkRes_alpha' (index=7).   <---> Output : variable 'DtktkRes_alpha' (index=7).
+--- Id                       : Input : variable 'DsvpvDistance/DsvpvDisErr' (index=8).   <---> Output : variable 'DsvpvDistance/DsvpvDisErr' (index=8).
+--- Id                       : Input : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).   <---> Output : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).
+--- Factory                  : 
+--- Factory                  : current transformation string: 'D'
+--- Factory                  : Create Transformation "D" with events from all classes.
+--- Deco                     : Transformation, Variable selection : 
+--- Deco                     : Input : variable 'Dtrk1Pt' (index=0).   <---> Output : variable 'Dtrk1Pt' (index=0).
+--- Deco                     : Input : variable 'DRestrk1Pt' (index=1).   <---> Output : variable 'DRestrk1Pt' (index=1).
+--- Deco                     : Input : variable 'DRestrk2Pt' (index=2).   <---> Output : variable 'DRestrk2Pt' (index=2).
+--- Deco                     : Input : variable 'DtktkRespt' (index=3).   <---> Output : variable 'DtktkRespt' (index=3).
+--- Deco                     : Input : variable 'Dchi2cl' (index=4).   <---> Output : variable 'Dchi2cl' (index=4).
+--- Deco                     : Input : variable 'DtktkRes_chi2cl' (index=5).   <---> Output : variable 'DtktkRes_chi2cl' (index=5).
+--- Deco                     : Input : variable 'Dalpha' (index=6).   <---> Output : variable 'Dalpha' (index=6).
+--- Deco                     : Input : variable 'DtktkRes_alpha' (index=7).   <---> Output : variable 'DtktkRes_alpha' (index=7).
+--- Deco                     : Input : variable 'DsvpvDistance/DsvpvDisErr' (index=8).   <---> Output : variable 'DsvpvDistance/DsvpvDisErr' (index=8).
+--- Deco                     : Input : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).   <---> Output : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).
+--- Factory                  : 
+--- Factory                  : current transformation string: 'P'
+--- Factory                  : Create Transformation "P" with events from all classes.
+--- PCA                      : Transformation, Variable selection : 
+--- PCA                      : Input : variable 'Dtrk1Pt' (index=0).   <---> Output : variable 'Dtrk1Pt' (index=0).
+--- PCA                      : Input : variable 'DRestrk1Pt' (index=1).   <---> Output : variable 'DRestrk1Pt' (index=1).
+--- PCA                      : Input : variable 'DRestrk2Pt' (index=2).   <---> Output : variable 'DRestrk2Pt' (index=2).
+--- PCA                      : Input : variable 'DtktkRespt' (index=3).   <---> Output : variable 'DtktkRespt' (index=3).
+--- PCA                      : Input : variable 'Dchi2cl' (index=4).   <---> Output : variable 'Dchi2cl' (index=4).
+--- PCA                      : Input : variable 'DtktkRes_chi2cl' (index=5).   <---> Output : variable 'DtktkRes_chi2cl' (index=5).
+--- PCA                      : Input : variable 'Dalpha' (index=6).   <---> Output : variable 'Dalpha' (index=6).
+--- PCA                      : Input : variable 'DtktkRes_alpha' (index=7).   <---> Output : variable 'DtktkRes_alpha' (index=7).
+--- PCA                      : Input : variable 'DsvpvDistance/DsvpvDisErr' (index=8).   <---> Output : variable 'DsvpvDistance/DsvpvDisErr' (index=8).
+--- PCA                      : Input : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).   <---> Output : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).
+--- Factory                  : 
+--- Factory                  : current transformation string: 'G,D'
+--- Factory                  : Create Transformation "G" with events from all classes.
+--- Gauss                    : Transformation, Variable selection : 
+--- Gauss                    : Input : variable 'Dtrk1Pt' (index=0).   <---> Output : variable 'Dtrk1Pt' (index=0).
+--- Gauss                    : Input : variable 'DRestrk1Pt' (index=1).   <---> Output : variable 'DRestrk1Pt' (index=1).
+--- Gauss                    : Input : variable 'DRestrk2Pt' (index=2).   <---> Output : variable 'DRestrk2Pt' (index=2).
+--- Gauss                    : Input : variable 'DtktkRespt' (index=3).   <---> Output : variable 'DtktkRespt' (index=3).
+--- Gauss                    : Input : variable 'Dchi2cl' (index=4).   <---> Output : variable 'Dchi2cl' (index=4).
+--- Gauss                    : Input : variable 'DtktkRes_chi2cl' (index=5).   <---> Output : variable 'DtktkRes_chi2cl' (index=5).
+--- Gauss                    : Input : variable 'Dalpha' (index=6).   <---> Output : variable 'Dalpha' (index=6).
+--- Gauss                    : Input : variable 'DtktkRes_alpha' (index=7).   <---> Output : variable 'DtktkRes_alpha' (index=7).
+--- Gauss                    : Input : variable 'DsvpvDistance/DsvpvDisErr' (index=8).   <---> Output : variable 'DsvpvDistance/DsvpvDisErr' (index=8).
+--- Gauss                    : Input : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).   <---> Output : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).
+--- Factory                  : Create Transformation "D" with events from all classes.
+--- Deco                     : Transformation, Variable selection : 
+--- Deco                     : Input : variable 'Dtrk1Pt' (index=0).   <---> Output : variable 'Dtrk1Pt' (index=0).
+--- Deco                     : Input : variable 'DRestrk1Pt' (index=1).   <---> Output : variable 'DRestrk1Pt' (index=1).
+--- Deco                     : Input : variable 'DRestrk2Pt' (index=2).   <---> Output : variable 'DRestrk2Pt' (index=2).
+--- Deco                     : Input : variable 'DtktkRespt' (index=3).   <---> Output : variable 'DtktkRespt' (index=3).
+--- Deco                     : Input : variable 'Dchi2cl' (index=4).   <---> Output : variable 'Dchi2cl' (index=4).
+--- Deco                     : Input : variable 'DtktkRes_chi2cl' (index=5).   <---> Output : variable 'DtktkRes_chi2cl' (index=5).
+--- Deco                     : Input : variable 'Dalpha' (index=6).   <---> Output : variable 'Dalpha' (index=6).
+--- Deco                     : Input : variable 'DtktkRes_alpha' (index=7).   <---> Output : variable 'DtktkRes_alpha' (index=7).
+--- Deco                     : Input : variable 'DsvpvDistance/DsvpvDisErr' (index=8).   <---> Output : variable 'DsvpvDistance/DsvpvDisErr' (index=8).
+--- Deco                     : Input : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).   <---> Output : variable 'DtktkRes_svpvDistance/DtktkRes_svpvDisErr' (index=9).
+--- Id                       : Preparing the Identity transformation...
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                   Dtrk1Pt:                                     2.9302                                     2.3017   [                                    0.50016                                     11.916 ]
+--- TFHandler_Factory        :                                DRestrk1Pt:                                     5.7866                                     3.5006   [                                    0.52897                                     17.983 ]
+--- TFHandler_Factory        :                                DRestrk2Pt:                                     6.1520                                     3.4700   [                                    0.50311                                     17.946 ]
+--- TFHandler_Factory        :                                DtktkRespt:                                     11.877                                     2.5660   [                                     8.0009                                     19.785 ]
+--- TFHandler_Factory        :                                   Dchi2cl:                                    0.52676                                    0.27367   [                                   0.050261                                    0.99981 ]
+--- TFHandler_Factory        :                           DtktkRes_chi2cl:                                    0.53792                                    0.27699   [                                   0.051546                                    0.99983 ]
+--- TFHandler_Factory        :                                    Dalpha:                                   0.061068                                   0.049722   [                                 9.7361e-05                                    0.19999 ]
+--- TFHandler_Factory        :                            DtktkRes_alpha:                                   0.084184                                   0.051904   [                                 0.00062029                                    0.19980 ]
+--- TFHandler_Factory        :                 DsvpvDistance/DsvpvDisErr:                                     16.846                                     27.594   [                                     2.0004                                     1013.3 ]
+--- TFHandler_Factory        : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                     11.539                                     10.904   [                                     2.0012                                     153.18 ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        : Plot event variables for Id
+--- TFHandler_Factory        : Create scatter and profile plots in target-file directory: 
+--- TFHandler_Factory        : ROOT/TMVA_pp_10_20.root:/InputVariables_Id/CorrelationPlots
+--- Deco                     : Preparing the Decorrelation transformation...
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                   Dtrk1Pt:                                     2.4126                                     1.0000   [                                   -0.72306                                     6.4469 ]
+--- TFHandler_Factory        :                                DRestrk1Pt:                                     3.3186                                     1.0000   [                                    -2.0197                                     6.8311 ]
+--- TFHandler_Factory        :                                DRestrk2Pt:                                     3.6108                                     1.0000   [                                   -0.63633                                     8.3634 ]
+--- TFHandler_Factory        :                                DtktkRespt:                                     2.9672                                     1.0000   [                                   -0.66342                                     9.5068 ]
+--- TFHandler_Factory        :                                   Dchi2cl:                                     2.0091                                     1.0000   [                                  -0.061034                                     3.9385 ]
+--- TFHandler_Factory        :                           DtktkRes_chi2cl:                                     1.7564                                     1.0000   [                                   -0.60564                                     3.5698 ]
+--- TFHandler_Factory        :                                    Dalpha:                                     2.5251                                     1.0000   [                                    0.75312                                     9.3537 ]
+--- TFHandler_Factory        :                            DtktkRes_alpha:                                     3.7861                                     1.0000   [                                    -3.5786                                     7.6624 ]
+--- TFHandler_Factory        :                 DsvpvDistance/DsvpvDisErr:                                    0.53059                                     1.0000   [                                    -1.2241                                     37.751 ]
+--- TFHandler_Factory        : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                    0.92216                                     1.0000   [                                    -8.6361                                     14.962 ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        : Plot event variables for Deco
+--- TFHandler_Factory        : Create scatter and profile plots in target-file directory: 
+--- TFHandler_Factory        : ROOT/TMVA_pp_10_20.root:/InputVariables_Deco/CorrelationPlots
+--- PCA                      : Preparing the Principle Component (PCA) transformation...
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                   Dtrk1Pt:                                    -2.9330                                     27.831   [                                    -19.454                                     970.85 ]
+--- TFHandler_Factory        :                                DRestrk1Pt:                                    -1.1584                                     10.311   [                                    -212.47                                     139.19 ]
+--- TFHandler_Factory        :                                DRestrk2Pt:                                    0.14292                                     4.5545   [                                    -12.419                                     14.676 ]
+--- TFHandler_Factory        :                                DtktkRespt:                                    0.40646                                     3.3023   [                                    -8.8978                                     9.6126 ]
+--- TFHandler_Factory        :                                   Dchi2cl:                                     1.3027                                     1.9946   [                                    -3.4798                                     6.8143 ]
+--- TFHandler_Factory        :                           DtktkRes_chi2cl:                                  -0.027584                                    0.27006   [                                   -0.65129                                    0.67133 ]
+--- TFHandler_Factory        :                                    Dalpha:                                  0.0086572                                    0.27902   [                                   -0.63216                                    0.65927 ]
+--- TFHandler_Factory        :                            DtktkRes_alpha:                                  0.0065462                                   0.048058   [                                   -0.46565                                    0.11760 ]
+--- TFHandler_Factory        :                 DsvpvDistance/DsvpvDisErr:                                  0.0019502                                   0.039836   [                                   -0.14645                                    0.17722 ]
+--- TFHandler_Factory        : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                -0.00098005                                   0.029303   [                                   -0.19553                                    0.24052 ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        : Plot event variables for PCA
+--- TFHandler_Factory        : Create scatter and profile plots in target-file directory: 
+--- TFHandler_Factory        : ROOT/TMVA_pp_10_20.root:/InputVariables_PCA/CorrelationPlots
+--- Gauss                    : Preparing the Gaussian transformation...
+--- Deco                     : Preparing the Decorrelation transformation...
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        :                                   Dtrk1Pt:                                   0.021088                                     1.0000   [                                    -3.6669                                     6.3035 ]
+--- TFHandler_Factory        :                                DRestrk1Pt:                                  -0.034592                                     1.0000   [                                    -8.4946                                     7.7307 ]
+--- TFHandler_Factory        :                                DRestrk2Pt:                                  -0.010278                                     1.0000   [                                    -8.2780                                     5.4932 ]
+--- TFHandler_Factory        :                                DtktkRespt:                                   0.077433                                     1.0000   [                                    -5.8130                                     7.9933 ]
+--- TFHandler_Factory        :                                   Dchi2cl:                                  -0.046579                                     1.0000   [                                    -3.6175                                     5.7448 ]
+--- TFHandler_Factory        :                           DtktkRes_chi2cl:                                   0.031529                                     1.0000   [                                    -3.6107                                     5.6431 ]
+--- TFHandler_Factory        :                                    Dalpha:                                   0.096337                                     1.0000   [                                    -3.7360                                     6.4625 ]
+--- TFHandler_Factory        :                            DtktkRes_alpha:                                  -0.073617                                     1.0000   [                                    -3.5055                                     6.9757 ]
+--- TFHandler_Factory        :                 DsvpvDistance/DsvpvDisErr:                                 -0.0018214                                     1.0000   [                                    -7.0483                                     8.4033 ]
+--- TFHandler_Factory        : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                  -0.049018                                     1.0000   [                                    -4.1663                                     7.9127 ]
+--- TFHandler_Factory        : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_Factory        : Plot event variables for Gauss_Deco
+--- TFHandler_Factory        : Create scatter and profile plots in target-file directory: 
+--- TFHandler_Factory        : ROOT/TMVA_pp_10_20.root:/InputVariables_Gauss_Deco/CorrelationPlots
+--- TFHandler_Factory        :  
+--- TFHandler_Factory        : Ranking input variables (method unspecific)...
+--- IdTransformation         : Ranking result (top variable is best ranked)
+--- IdTransformation         : ------------------------------------------------------------------
+--- IdTransformation         : Rank : Variable                                  : Separation
+--- IdTransformation         : ------------------------------------------------------------------
+--- IdTransformation         :    1 : Dtrk1Pt                                   : 5.291e-01
+--- IdTransformation         :    2 : DtktkRes_alpha                            : 3.172e-01
+--- IdTransformation         :    3 : DtktkRes_svpvDistance/DtktkRes_svpvDisErr : 2.560e-01
+--- IdTransformation         :    4 : DsvpvDistance/DsvpvDisErr                 : 2.278e-01
+--- IdTransformation         :    5 : Dalpha                                    : 2.036e-01
+--- IdTransformation         :    6 : DtktkRespt                                : 1.835e-01
+--- IdTransformation         :    7 : DRestrk2Pt                                : 1.236e-01
+--- IdTransformation         :    8 : DRestrk1Pt                                : 1.031e-01
+--- IdTransformation         :    9 : Dchi2cl                                   : 8.469e-02
+--- IdTransformation         :   10 : DtktkRes_chi2cl                           : 4.256e-02
+--- IdTransformation         : ------------------------------------------------------------------
+--- Factory                  :  
+--- Factory                  : Train all methods for Classification ...
+--- Factory                  : Train method: CutsGA for Classification
+--- CutsGA                   : 
+--- CutsGA                   : [1m================================================================[0m
+--- CutsGA                   : [1mH e l p   f o r   M V A   m e t h o d   [ CutsGA ] :[0m
+--- CutsGA                   : 
+--- CutsGA                   : [1m--- Short description:[0m
+--- CutsGA                   : 
+--- CutsGA                   : The optimisation of rectangular cuts performed by TMVA maximises 
+--- CutsGA                   : the background rejection at given signal efficiency, and scans 
+--- CutsGA                   : over the full range of the latter quantity. Three optimisation
+--- CutsGA                   : methods are optional: Monte Carlo sampling (MC), a Genetics
+--- CutsGA                   : Algorithm (GA), and Simulated Annealing (SA). GA and SA are
+--- CutsGA                   : expected to perform best.
+--- CutsGA                   : 
+--- CutsGA                   : The difficulty to find the optimal cuts strongly increases with
+--- CutsGA                   : the dimensionality (number of input variables) of the problem.
+--- CutsGA                   : This behavior is due to the non-uniqueness of the solution space.
+--- CutsGA                   : 
+--- CutsGA                   : [1m--- Performance optimisation:[0m
+--- CutsGA                   : 
+--- CutsGA                   : If the dimensionality exceeds, say, 4 input variables, it is 
+--- CutsGA                   : advisable to scrutinize the separation power of the variables,
+--- CutsGA                   : and to remove the weakest ones. If some among the input variables
+--- CutsGA                   : can be described by a single cut (e.g., because signal tends to be
+--- CutsGA                   : larger than background), this can be indicated to MethodCuts via
+--- CutsGA                   : the "Fsmart" options (see option string). Choosing this option
+--- CutsGA                   : reduces the number of requirements for the variable from 2 (min/max)
+--- CutsGA                   : to a single one (TMVA finds out whether it is to be interpreted as
+--- CutsGA                   : min or max).
+--- CutsGA                   : 
+--- CutsGA                   : [1m--- Performance tuning via configuration options:[0m
+--- CutsGA                   : 
+--- CutsGA                   : Monte Carlo sampling:
+--- CutsGA                   : 
+--- CutsGA                   : Apart form the "Fsmart" option for the variables, the only way
+--- CutsGA                   : to improve the MC sampling is to increase the sampling rate. This
+--- CutsGA                   : is done via the configuration option "MC_NRandCuts". The execution
+--- CutsGA                   : time scales linearly with the sampling rate.
+--- CutsGA                   : 
+--- CutsGA                   : Genetic Algorithm:
+--- CutsGA                   : 
+--- CutsGA                   : The algorithm terminates if no significant fitness increase has
+--- CutsGA                   : been achieved within the last "nsteps" steps of the calculation.
+--- CutsGA                   : Wiggles in the ROC curve or constant background rejection of 1
+--- CutsGA                   : indicate that the GA failed to always converge at the true maximum
+--- CutsGA                   : fitness. In such a case, it is recommended to broaden the search 
+--- CutsGA                   : by increasing the population size ("popSize") and to give the GA 
+--- CutsGA                   : more time to find improvements by increasing the number of steps
+--- CutsGA                   : ("nsteps")
+--- CutsGA                   :   -> increase "popSize" (at least >10 * number of variables)
+--- CutsGA                   :   -> increase "nsteps"
+--- CutsGA                   : 
+--- CutsGA                   : Simulated Annealing (SA) algorithm:
+--- CutsGA                   : 
+--- CutsGA                   : "Increasing Adaptive" approach:
+--- CutsGA                   : 
+--- CutsGA                   : The algorithm seeks local minima and explores their neighborhood, while
+--- CutsGA                   : changing the ambient temperature depending on the number of failures
+--- CutsGA                   : in the previous steps. The performance can be improved by increasing
+--- CutsGA                   : the number of iteration steps ("MaxCalls"), or by adjusting the
+--- CutsGA                   : minimal temperature ("MinTemperature"). Manual adjustments of the
+--- CutsGA                   : speed of the temperature increase ("TemperatureScale" and "AdaptiveSpeed")
+--- CutsGA                   : to individual data sets should also help. Summary:
+--- CutsGA                   :   -> increase "MaxCalls"
+--- CutsGA                   :   -> adjust   "MinTemperature"
+--- CutsGA                   :   -> adjust   "TemperatureScale"
+--- CutsGA                   :   -> adjust   "AdaptiveSpeed"
+--- CutsGA                   : 
+--- CutsGA                   : "Decreasing Adaptive" approach:
+--- CutsGA                   : 
+--- CutsGA                   : The algorithm calculates the initial temperature (based on the effect-
+--- CutsGA                   : iveness of large steps) and the multiplier that ensures to reach the
+--- CutsGA                   : minimal temperature with the requested number of iteration steps.
+--- CutsGA                   : The performance can be improved by adjusting the minimal temperature
+--- CutsGA                   :  ("MinTemperature") and by increasing number of steps ("MaxCalls"):
+--- CutsGA                   :   -> increase "MaxCalls"
+--- CutsGA                   :   -> adjust   "MinTemperature"
+--- CutsGA                   :  
+--- CutsGA                   : Other kernels:
+--- CutsGA                   : 
+--- CutsGA                   : Alternative ways of counting the temperature change are implemented. 
+--- CutsGA                   : Each of them starts with the maximum temperature ("MaxTemperature")
+--- CutsGA                   : and descreases while changing the temperature according to a given
+--- CutsGA                   : prescription:
+--- CutsGA                   : CurrentTemperature =
+--- CutsGA                   :   - Sqrt: InitialTemperature / Sqrt(StepNumber+2) * TemperatureScale
+--- CutsGA                   :   - Log:  InitialTemperature / Log(StepNumber+2) * TemperatureScale
+--- CutsGA                   :   - Homo: InitialTemperature / (StepNumber+2) * TemperatureScale
+--- CutsGA                   :   - Sin:  (Sin(StepNumber / TemperatureScale) + 1) / (StepNumber + 1)*InitialTemperature + Eps
+--- CutsGA                   :   - Geo:  CurrentTemperature * TemperatureScale
+--- CutsGA                   : 
+--- CutsGA                   : Their performance can be improved by adjusting initial temperature
+--- CutsGA                   : ("InitialTemperature"), the number of iteration steps ("MaxCalls"),
+--- CutsGA                   : and the multiplier that scales the termperature descrease
+--- CutsGA                   : ("TemperatureScale")
+--- CutsGA                   :   -> increase "MaxCalls"
+--- CutsGA                   :   -> adjust   "InitialTemperature"
+--- CutsGA                   :   -> adjust   "TemperatureScale"
+--- CutsGA                   :   -> adjust   "KernelTemperature"
+--- CutsGA                   : 
+--- CutsGA                   : <Suppress this message by specifying "!H" in the booking option>
+--- CutsGA                   : [1m================================================================[0m
+--- CutsGA                   : 
+--- CutsGA                   : Begin training
+--- FitterBase               : <GeneticFitter> Optimisation, please be patient ... (inaccurate progress timing for GA)
+--- FitterBase               : Elapsed time: [1;31m40.1 sec[0m                            
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.1
+--- CutsGA                   : Corresponding background efficiency       : 0
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:    1.21854 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:    4.39084 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:    3.41573 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    9.41247 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:  0.0863133 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:   0.145349 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=  0.0581005
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.163613
+--- CutsGA                   : Cut[ 8]:    4.91122 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    7.03254 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.2
+--- CutsGA                   : Corresponding background efficiency       : 0
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:    2.83657 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:   0.972749 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:    2.67616 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    8.00915 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:   0.333861 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:   0.106337 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.133177
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=    0.17786
+--- CutsGA                   : Cut[ 8]:    7.62323 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    6.53682 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.3
+--- CutsGA                   : Corresponding background efficiency       : 0
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:    3.46313 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:    1.17338 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:   0.531104 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    7.97579 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:  0.0469092 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:  0.0500163 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.112173
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.188796
+--- CutsGA                   : Cut[ 8]:    4.81076 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    5.69162 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.4
+--- CutsGA                   : Corresponding background efficiency       : 0
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:    1.33149 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:    1.80535 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:   0.435199 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    8.07746 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:  0.0770115 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:  0.0847196 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.057456
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=    0.19205
+--- CutsGA                   : Cut[ 8]:    4.91122 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    7.32667 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.5
+--- CutsGA                   : Corresponding background efficiency       : 0.00174216
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:    1.49443 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:   0.502054 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:   0.751897 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    8.10223 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:  0.0563341 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:  0.0814668 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=  0.0807736
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.201669
+--- CutsGA                   : Cut[ 8]:    7.62323 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    3.76559 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.6
+--- CutsGA                   : Corresponding background efficiency       : 0.0139373
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:    1.66147 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:   0.622525 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:   0.511858 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    7.99632 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:   0.106149 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:  0.0465015 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.119038
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.191917
+--- CutsGA                   : Cut[ 8]:    3.28794 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    2.86397 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.7
+--- CutsGA                   : Corresponding background efficiency       : 0.0278746
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:     1.3228 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:   0.885675 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:   0.788302 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    7.96417 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:  0.0490311 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:   0.046484 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.158437
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.196648
+--- CutsGA                   : Cut[ 8]:    3.39428 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    4.22157 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.8
+--- CutsGA                   : Corresponding background efficiency       : 0.0609756
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:    1.29641 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:    0.53346 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:   0.497749 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:    7.94211 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:  0.0421667 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:  0.0505651 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.164273
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.201495
+--- CutsGA                   : Cut[ 8]:    2.77419 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    2.28876 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut values for requested signal efficiency: 0.9
+--- CutsGA                   : Corresponding background efficiency       : 0.149826
+--- CutsGA                   : Transformation applied to input variables : None
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : Cut[ 0]:   0.945915 <                                   Dtrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 1]:   0.359674 <                                DRestrk1Pt <=      1e+30
+--- CutsGA                   : Cut[ 2]:   0.585602 <                                DRestrk2Pt <=      1e+30
+--- CutsGA                   : Cut[ 3]:     7.9805 <                                DtktkRespt <=      1e+30
+--- CutsGA                   : Cut[ 4]:  0.0426115 <                                   Dchi2cl <=      1e+30
+--- CutsGA                   : Cut[ 5]:  0.0438064 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsGA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=    0.20139
+--- CutsGA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.201011
+--- CutsGA                   : Cut[ 8]:    2.74269 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsGA                   : Cut[ 9]:    2.25875 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsGA                   : -----------------------------------------------------------------------------
+--- CutsGA                   : End of training                                              
+--- CutsGA                   : Elapsed time for training with 2278 events: [1;31m40.1 sec[0m         
+--- CutsGA                   : Create MVA output for classification on training sample
+--- CutsGA                   : Evaluation of CutsGA on training sample (2278 events)
+--- CutsGA                   : Elapsed time for evaluation of 2278 events: [1;31m0.0169 sec[0m       
+--- CutsGA                   : Creating weight file in xml format: [0;36mweights/TMVAClassification_CutsGA.weights.xml[0m
+--- CutsGA                   : Creating standalone response class: [0;36mweights/TMVAClassification_CutsGA.class.C[0m
+--- CutsGA                   : Write monitoring histograms to file: ROOT/TMVA_pp_10_20.root:/Method_Cuts/CutsGA
+--- Factory                  : Training finished
+--- Factory                  : Train method: CutsSA for Classification
+--- CutsSA                   : Begin training
+--- FitterBase               : <SimulatedAnnealingFitter> Optimisation, please be patient ... 
+--- FitterBase               : (progress timing may be inaccurate for SA)
+--- SimulatedAnnealing       : Temperatur scale = 0.0075, current temperature = 1e-06
+--- SimulatedAnnealing       : Elapsed time: [1;31m20.6 sec[0m                            
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.1
+--- CutsSA                   : Corresponding background efficiency       : 0
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:   0.904662 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:     0.9485 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:    6.28809 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    9.79687 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:  0.0997426 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:   0.149744 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=  0.0486636
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.123626
+--- CutsSA                   : Cut[ 8]:    14.9553 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    5.24279 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.2
+--- CutsSA                   : Corresponding background efficiency       : 0
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:    1.90987 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:    1.76044 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:   0.989606 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    9.24227 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:  0.0951769 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:  0.0439379 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=  0.0664591
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.146466
+--- CutsSA                   : Cut[ 8]:   -4.50169 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    4.05066 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.3
+--- CutsSA                   : Corresponding background efficiency       : 0
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:    1.29143 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:   0.977179 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:   0.344899 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    8.65856 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:    0.21818 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:  0.0650715 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=  0.0653896
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.177288
+--- CutsSA                   : Cut[ 8]:   -1.09339 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    9.36453 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.4
+--- CutsSA                   : Corresponding background efficiency       : 0
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:    1.94387 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:    0.48868 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:    0.96017 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    8.02455 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:   0.210715 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:   0.115288 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=  0.0787273
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.194321
+--- CutsSA                   : Cut[ 8]:    3.12378 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:     2.5051 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.5
+--- CutsSA                   : Corresponding background efficiency       : 0.00348432
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:    2.00745 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:   0.981586 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:   0.584797 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    8.05482 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:  0.0696008 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:   0.048932 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.126956
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.198458
+--- CutsSA                   : Cut[ 8]:    5.96266 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    3.72145 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.6
+--- CutsSA                   : Corresponding background efficiency       : 0.0121951
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:    1.61804 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:    1.10272 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:    0.61364 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    7.92827 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:   0.121697 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:  0.0496206 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.123395
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.200944
+--- CutsSA                   : Cut[ 8]:    2.64774 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    2.97486 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.7
+--- CutsSA                   : Corresponding background efficiency       : 0.0296167
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:    1.38973 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:   0.451457 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:   0.587627 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    8.04706 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:   0.118954 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:  0.0615358 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.143637
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.200454
+--- CutsSA                   : Cut[ 8]:    3.28393 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    2.30728 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.8
+--- CutsSA                   : Corresponding background efficiency       : 0.087108
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:   0.947161 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:   0.357183 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:   0.689109 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    8.08668 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:  0.0983764 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:  0.0483683 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.178169
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.196793
+--- CutsSA                   : Cut[ 8]:    3.34839 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    2.57287 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut values for requested signal efficiency: 0.9
+--- CutsSA                   : Corresponding background efficiency       : 0.221254
+--- CutsSA                   : Transformation applied to input variables : None
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : Cut[ 0]:   0.702297 <                                   Dtrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 1]:   0.650238 <                                DRestrk1Pt <=      1e+30
+--- CutsSA                   : Cut[ 2]:   0.543292 <                                DRestrk2Pt <=      1e+30
+--- CutsSA                   : Cut[ 3]:    8.04644 <                                DtktkRespt <=      1e+30
+--- CutsSA                   : Cut[ 4]:  0.0671533 <                                   Dchi2cl <=      1e+30
+--- CutsSA                   : Cut[ 5]:  0.0537179 <                           DtktkRes_chi2cl <=      1e+30
+--- CutsSA                   : Cut[ 6]:     -1e+30 <                                    Dalpha <=   0.182225
+--- CutsSA                   : Cut[ 7]:     -1e+30 <                            DtktkRes_alpha <=   0.201777
+--- CutsSA                   : Cut[ 8]:    2.34094 <                 DsvpvDistance/DsvpvDisErr <=      1e+30
+--- CutsSA                   : Cut[ 9]:    2.84282 < DtktkRes_svpvDistance/DtktkRes_svpvDisErr <=      1e+30
+--- CutsSA                   : -----------------------------------------------------------------------------
+--- CutsSA                   : End of training                                              
+--- CutsSA                   : Elapsed time for training with 2278 events: [1;31m20.8 sec[0m         
+--- CutsSA                   : Create MVA output for classification on training sample
+--- CutsSA                   : Evaluation of CutsSA on training sample (2278 events)
+--- CutsSA                   : Elapsed time for evaluation of 2278 events: [1;31m0.0115 sec[0m       
+--- CutsSA                   : Creating weight file in xml format: [0;36mweights/TMVAClassification_CutsSA.weights.xml[0m
+--- CutsSA                   : Creating standalone response class: [0;36mweights/TMVAClassification_CutsSA.class.C[0m
+--- CutsSA                   : Write monitoring histograms to file: ROOT/TMVA_pp_10_20.root:/Method_Cuts/CutsSA
+--- Factory                  : Training finished
+--- Factory                  : Train method: LD for Classification
+--- LD                       : 
+--- LD                       : [1m================================================================[0m
+--- LD                       : [1mH e l p   f o r   M V A   m e t h o d   [ LD ] :[0m
+--- LD                       : 
+--- LD                       : [1m--- Short description:[0m
+--- LD                       : 
+--- LD                       : Linear discriminants select events by distinguishing the mean 
+--- LD                       : values of the signal and background distributions in a trans- 
+--- LD                       : formed variable space where linear correlations are removed.
+--- LD                       : The LD implementation here is equivalent to the "Fisher" discriminant
+--- LD                       : for classification, but also provides linear regression.
+--- LD                       : 
+--- LD                       :    (More precisely: the "linear discriminator" determines
+--- LD                       :     an axis in the (correlated) hyperspace of the input 
+--- LD                       :     variables such that, when projecting the output classes 
+--- LD                       :     (signal and background) upon this axis, they are pushed 
+--- LD                       :     as far as possible away from each other, while events
+--- LD                       :     of a same class are confined in a close vicinity. The  
+--- LD                       :     linearity property of this classifier is reflected in the 
+--- LD                       :     metric with which "far apart" and "close vicinity" are 
+--- LD                       :     determined: the covariance matrix of the discriminating
+--- LD                       :     variable space.)
+--- LD                       : 
+--- LD                       : [1m--- Performance optimisation:[0m
+--- LD                       : 
+--- LD                       : Optimal performance for the linear discriminant is obtained for 
+--- LD                       : linearly correlated Gaussian-distributed variables. Any deviation
+--- LD                       : from this ideal reduces the achievable separation power. In 
+--- LD                       : particular, no discrimination at all is achieved for a variable
+--- LD                       : that has the same sample mean for signal and background, even if 
+--- LD                       : the shapes of the distributions are very different. Thus, the linear 
+--- LD                       : discriminant often benefits from a suitable transformation of the 
+--- LD                       : input variables. For example, if a variable x in [-1,1] has a 
+--- LD                       : a parabolic signal distributions, and a uniform background
+--- LD                       : distributions, their mean value is zero in both cases, leading 
+--- LD                       : to no separation. The simple transformation x -> |x| renders this 
+--- LD                       : variable powerful for the use in a linear discriminant.
+--- LD                       : 
+--- LD                       : [1m--- Performance tuning via configuration options:[0m
+--- LD                       : 
+--- LD                       : <None>
+--- LD                       : 
+--- LD                       : <Suppress this message by specifying "!H" in the booking option>
+--- LD                       : [1m================================================================[0m
+--- LD                       : 
+--- LD                       : Begin training
+--- LD                       : Results for LD coefficients:
+--- LD                       : -------------------------------------------------------------------------------------
+--- LD                       :                                  Variable:                               Coefficient:
+--- LD                       : -------------------------------------------------------------------------------------
+--- LD                       :                                   Dtrk1Pt:                                    +0.057
+--- LD                       :                                DRestrk1Pt:                                    +0.150
+--- LD                       :                                DRestrk2Pt:                                    +0.152
+--- LD                       :                                DtktkRespt:                                    -0.171
+--- LD                       :                                   Dchi2cl:                                    +0.209
+--- LD                       :                           DtktkRes_chi2cl:                                    +0.025
+--- LD                       :                                    Dalpha:                                    -2.171
+--- LD                       :                            DtktkRes_alpha:                                    +1.656
+--- LD                       :                 DsvpvDistance/DsvpvDisErr:                                    -0.001
+--- LD                       : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                    +0.002
+--- LD                       :                                  (offset):                                    -0.038
+--- LD                       : -------------------------------------------------------------------------------------
+--- LD                       : End of training                                              
+--- LD                       : Elapsed time for training with 2278 events: [1;31m0.00278 sec[0m         
+--- LD                       : Create MVA output for classification on training sample
+--- LD                       : Evaluation of LD on training sample (2278 events)
+--- LD                       : Elapsed time for evaluation of 2278 events: [1;31m0.0122 sec[0m       
+--- LD_PDFSig                : Validation result for PDF "LD_tr_S": 
+--- LD_PDFSig                :     chi2/ndof(!=0) = 100.4/30 = 3.35 (Prob = 0.00)
+[1;31m--- <WARNING> LD_PDFSig                : Comparison of the original histogram "LD_tr_S"[0m
+[1;31m--- <WARNING> LD_PDFSig                : with the corresponding PDF gave a chi2/ndof of 3.34552,[0m
+[1;31m--- <WARNING> LD_PDFSig                : which corresponds to a deviation of more than 5 sigma! Please check![0m
+--- LD_PDFSig                :     #bins-found(#expected-bins) deviating > [1,2,3,6] sigmas: [9(9),4(1),4(0),0(0)]
+--- LD_PDFBkg                : Validation result for PDF "LD_tr_B": 
+--- LD_PDFBkg                :     chi2/ndof(!=0) = 34.1/21 = 1.62 (Prob = 0.04)
+--- LD_PDFBkg                :     #bins-found(#expected-bins) deviating > [1,2,3,6] sigmas: [7(6),1(0),1(0),0(0)]
+[1;31m--- <WARNING> LD                       : could not calculate the separation, distributions fSplS or fSplB are not yet filled[0m
+--- LD                       : <CreateMVAPdfs> Separation from histogram (PDF): 0.585 (0.000)
+--- LD                       : Evaluation of LD on training sample
+--- LD                       : Elapsed time for evaluation of 2278 events: [1;31m0.0118 sec[0m       
+--- LD                       : Creating weight file in xml format: [0;36mweights/TMVAClassification_LD.weights.xml[0m
+--- LD                       : Creating standalone response class: [0;36mweights/TMVAClassification_LD.class.C[0m
+--- Factory                  : Training finished
+--- Factory                  : Train method: MLP for Classification
+--- MLP                      : 
+--- MLP                      : [1m================================================================[0m
+--- MLP                      : [1mH e l p   f o r   M V A   m e t h o d   [ MLP ] :[0m
+--- MLP                      : 
+--- MLP                      : [1m--- Short description:[0m
+--- MLP                      : 
+--- MLP                      : The MLP artificial neural network (ANN) is a traditional feed-
+--- MLP                      : forward multilayer perceptron impementation. The MLP has a user-
+--- MLP                      : defined hidden layer architecture, while the number of input (output)
+--- MLP                      : nodes is determined by the input variables (output classes, i.e., 
+--- MLP                      : signal and one background). 
+--- MLP                      : 
+--- MLP                      : [1m--- Performance optimisation:[0m
+--- MLP                      : 
+--- MLP                      : Neural networks are stable and performing for a large variety of 
+--- MLP                      : linear and non-linear classification problems. However, in contrast
+--- MLP                      : to (e.g.) boosted decision trees, the user is advised to reduce the 
+--- MLP                      : number of input variables that have only little discrimination power. 
+--- MLP                      : 
+--- MLP                      : In the tests we have carried out so far, the MLP and ROOT networks
+--- MLP                      : (TMlpANN, interfaced via TMVA) performed equally well, with however
+--- MLP                      : a clear speed advantage for the MLP. The Clermont-Ferrand neural 
+--- MLP                      : net (CFMlpANN) exhibited worse classification performance in these
+--- MLP                      : tests, which is partly due to the slow convergence of its training
+--- MLP                      : (at least 10k training cycles are required to achieve approximately
+--- MLP                      : competitive results).
+--- MLP                      : 
+--- MLP                      : [1mOvertraining: [0monly the TMlpANN performs an explicit separation of the
+--- MLP                      : full training sample into independent training and validation samples.
+--- MLP                      : We have found that in most high-energy physics applications the 
+--- MLP                      : avaliable degrees of freedom (training events) are sufficient to 
+--- MLP                      : constrain the weights of the relatively simple architectures required
+--- MLP                      : to achieve good performance. Hence no overtraining should occur, and 
+--- MLP                      : the use of validation samples would only reduce the available training
+--- MLP                      : information. However, if the perrormance on the training sample is 
+--- MLP                      : found to be significantly better than the one found with the inde-
+--- MLP                      : pendent test sample, caution is needed. The results for these samples 
+--- MLP                      : are printed to standard output at the end of each training job.
+--- MLP                      : 
+--- MLP                      : [1m--- Performance tuning via configuration options:[0m
+--- MLP                      : 
+--- MLP                      : The hidden layer architecture for all ANNs is defined by the option
+--- MLP                      : "HiddenLayers=N+1,N,...", where here the first hidden layer has N+1
+--- MLP                      : neurons and the second N neurons (and so on), and where N is the number  
+--- MLP                      : of input variables. Excessive numbers of hidden layers should be avoided,
+--- MLP                      : in favour of more neurons in the first hidden layer.
+--- MLP                      : 
+--- MLP                      : The number of cycles should be above 500. As said, if the number of
+--- MLP                      : adjustable weights is small compared to the training sample size,
+--- MLP                      : using a large number of training samples should not lead to overtraining.
+--- MLP                      : 
+--- MLP                      : <Suppress this message by specifying "!H" in the booking option>
+--- MLP                      : [1m================================================================[0m
+--- MLP                      : 
+--- Norm                     : Preparing the transformation.
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_MLP            :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_MLP            :                                   Dtrk1Pt:                                   -0.57428                                    0.40324   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                                DRestrk1Pt:                                   -0.39755                                    0.40112   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                                DRestrk2Pt:                                   -0.35230                                    0.39786   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                                DtktkRespt:                                   -0.34211                                    0.43550   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                                   Dchi2cl:                                  0.0036294                                    0.57643   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                           DtktkRes_chi2cl:                                   0.025805                                    0.58419   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                                    Dalpha:                                   -0.38998                                    0.49748   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                            DtktkRes_alpha:                                   -0.16094                                    0.52117   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            :                 DsvpvDistance/DsvpvDisErr:                                   -0.97064                                   0.054572   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                   -0.87382                                    0.14426   [                                    -1.0000                                     1.0000 ]
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- MLP                      : Begin training
+--- MLP                      : Training Network
+--- MLP                      : End of training                                              
+--- MLP                      : Elapsed time for training with 2278 events: [1;31m18.6 sec[0m         
+--- MLP                      : Create MVA output for classification on training sample
+--- MLP                      : Evaluation of MLP on training sample (2278 events)
+--- MLP                      : Elapsed time for evaluation of 2278 events: [1;31m0.0199 sec[0m       
+--- MLP                      : Creating weight file in xml format: [0;36mweights/TMVAClassification_MLP.weights.xml[0m
+--- MLP                      : Creating standalone response class: [0;36mweights/TMVAClassification_MLP.class.C[0m
+--- MLP                      : Write special histos to file: ROOT/TMVA_pp_10_20.root:/Method_MLP/MLP
+--- Factory                  : Training finished
+--- Factory                  : Train method: BDT for Classification
+--- BDT                      : Begin training
+--- BDT                      :  found and suggest the following possible pre-selection cuts 
+--- BDT                      : as option DoPreselection was not used, these cuts however will not be performed, but the training will see the full sample
+--- BDT                      :  found cut: Sig if var 3 < 8.21324
+--- BDT                      : <InitEventSample> For classification trees, 
+--- BDT                      :  the effective number of backgrounds is scaled to match 
+--- BDT                      :  the signal. Othersise the first boosting step would do 'just that'!
+--- BDT                      : re-normlise events such that Sig and Bkg have respective sum of weights = 1
+--- BDT                      :   sig->sig*0.668427ev. bkg->bkg*1.98432ev.
+--- BDT                      : #events: (reweighted) sig: 1139 bkg: 1139
+--- BDT                      : #events: (unweighted) sig: 1704 bkg: 574
+--- BDT                      : Training 850 Decision Trees ... patience please
+--- BinaryTree               : The minimal node size MinNodeSize=2.5 fMinNodeSize=2.5% is translated to an actual number of events = 28.95 for the training sample size of 1158
+--- BinaryTree               : Note: This number will be taken as absolute minimum in the node, 
+--- BinaryTree               :       in terms of 'weighted events' and unweighted ones !! 
+--- BDT                      : <Train> elapsed time: [1;31m1.3 sec[0m                              
+--- BDT                      : <Train> average number of nodes (w/o pruning) : 10
+--- BDT                      : End of training                                              
+--- BDT                      : Elapsed time for training with 2278 events: [1;31m1.31 sec[0m         
+--- BDT                      : Create MVA output for classification on training sample
+--- BDT                      : Evaluation of BDT on training sample (2278 events)
+--- BDT                      : Elapsed time for evaluation of 2278 events: [1;31m0.403 sec[0m       
+--- BDT                      : Creating weight file in xml format: [0;36mweights/TMVAClassification_BDT.weights.xml[0m
+--- BDT                      : Creating standalone response class: [0;36mweights/TMVAClassification_BDT.class.C[0m
+--- BDT                      : Write monitoring histograms to file: ROOT/TMVA_pp_10_20.root:/Method_BDT/BDT
+--- Factory                  : Training finished
+--- Factory                  : Train method: BDTB for Classification
+--- BDTB                     : Begin training
+--- BDTB                     :  found and suggest the following possible pre-selection cuts 
+--- BDTB                     : as option DoPreselection was not used, these cuts however will not be performed, but the training will see the full sample
+--- BDTB                     :  found cut: Sig if var 3 < 8.21324
+--- BDTB                     : <InitEventSample> For classification trees, 
+--- BDTB                     :  the effective number of backgrounds is scaled to match 
+--- BDTB                     :  the signal. Othersise the first boosting step would do 'just that'!
+--- BDTB                     : re-normlise events such that Sig and Bkg have respective sum of weights = 1
+--- BDTB                     :   sig->sig*0.668427ev. bkg->bkg*1.98432ev.
+--- BDTB                     : #events: (reweighted) sig: 1139 bkg: 1139
+--- BDTB                     : #events: (unweighted) sig: 1704 bkg: 574
+--- BDTB                     : Training 400 Decision Trees ... patience please
+--- BinaryTree               : The minimal node size MinNodeSize=5 fMinNodeSize=5% is translated to an actual number of events = 68.35 for the training sample size of 1367
+--- BinaryTree               : Note: This number will be taken as absolute minimum in the node, 
+--- BinaryTree               :       in terms of 'weighted events' and unweighted ones !! 
+--- BDTB                     : <Train> elapsed time: [1;31m0.523 sec[0m                              
+--- BDTB                     : <Train> average number of nodes (w/o pruning) : 7
+--- BDTB                     : End of training                                              
+--- BDTB                     : Elapsed time for training with 2278 events: [1;31m0.533 sec[0m         
+--- BDTB                     : Create MVA output for classification on training sample
+--- BDTB                     : Evaluation of BDTB on training sample (2278 events)
+--- BDTB                     : Elapsed time for evaluation of 2278 events: [1;31m0.133 sec[0m       
+--- BDTB                     : Creating weight file in xml format: [0;36mweights/TMVAClassification_BDTB.weights.xml[0m
+--- BDTB                     : Creating standalone response class: [0;36mweights/TMVAClassification_BDTB.class.C[0m
+--- BDTB                     : Write monitoring histograms to file: ROOT/TMVA_pp_10_20.root:/Method_BDT/BDTB
+--- Factory                  : Training finished
+--- Factory                  : 
+--- Factory                  : Ranking input variables (method specific)...
+--- Factory                  : No variable ranking supplied by classifier: CutsGA
+--- Factory                  : No variable ranking supplied by classifier: CutsSA
+--- LD                       : Ranking result (top variable is best ranked)
+--- LD                       : --------------------------------------------------------------------
+--- LD                       : Rank : Variable                                  : Discr. power
+--- LD                       : --------------------------------------------------------------------
+--- LD                       :    1 : Dalpha                                    : 2.171e+00
+--- LD                       :    2 : DtktkRes_alpha                            : 1.656e+00
+--- LD                       :    3 : Dchi2cl                                   : 2.085e-01
+--- LD                       :    4 : DtktkRespt                                : 1.706e-01
+--- LD                       :    5 : DRestrk2Pt                                : 1.519e-01
+--- LD                       :    6 : DRestrk1Pt                                : 1.503e-01
+--- LD                       :    7 : Dtrk1Pt                                   : 5.657e-02
+--- LD                       :    8 : DtktkRes_chi2cl                           : 2.462e-02
+--- LD                       :    9 : DtktkRes_svpvDistance/DtktkRes_svpvDisErr : 1.831e-03
+--- LD                       :   10 : DsvpvDistance/DsvpvDisErr                 : 1.165e-03
+--- LD                       : --------------------------------------------------------------------
+--- MLP                      : Ranking result (top variable is best ranked)
+--- MLP                      : --------------------------------------------------------------------
+--- MLP                      : Rank : Variable                                    : Importance
+--- MLP                      : --------------------------------------------------------------------
+--- MLP                      :    1 : DsvpvDistance_D_DsvpvDisErr                 : 2.903e+01
+--- MLP                      :    2 : Dtrk1Pt                                     : 2.344e+01
+--- MLP                      :    3 : DtktkRes_svpvDistance_D_DtktkRes_svpvDisErr : 1.860e+01
+--- MLP                      :    4 : Dalpha                                      : 5.359e+00
+--- MLP                      :    5 : DtktkRes_chi2cl                             : 5.007e+00
+--- MLP                      :    6 : DRestrk2Pt                                  : 3.180e+00
+--- MLP                      :    7 : DtktkRes_alpha                              : 3.021e+00
+--- MLP                      :    8 : Dchi2cl                                     : 2.654e+00
+--- MLP                      :    9 : DRestrk1Pt                                  : 2.381e+00
+--- MLP                      :   10 : DtktkRespt                                  : 2.270e+00
+--- MLP                      : --------------------------------------------------------------------
+--- BDT                      : Ranking result (top variable is best ranked)
+--- BDT                      : ---------------------------------------------------------------------------
+--- BDT                      : Rank : Variable                                  : Variable Importance
+--- BDT                      : ---------------------------------------------------------------------------
+--- BDT                      :    1 : Dtrk1Pt                                   : 1.420e-01
+--- BDT                      :    2 : Dalpha                                    : 1.166e-01
+--- BDT                      :    3 : DtktkRes_alpha                            : 1.091e-01
+--- BDT                      :    4 : Dchi2cl                                   : 1.030e-01
+--- BDT                      :    5 : DtktkRes_svpvDistance/DtktkRes_svpvDisErr : 9.801e-02
+--- BDT                      :    6 : DtktkRespt                                : 9.274e-02
+--- BDT                      :    7 : DtktkRes_chi2cl                           : 9.273e-02
+--- BDT                      :    8 : DRestrk1Pt                                : 8.646e-02
+--- BDT                      :    9 : DRestrk2Pt                                : 8.024e-02
+--- BDT                      :   10 : DsvpvDistance/DsvpvDisErr                 : 7.919e-02
+--- BDT                      : ---------------------------------------------------------------------------
+--- BDTB                     : Ranking result (top variable is best ranked)
+--- BDTB                     : ---------------------------------------------------------------------------
+--- BDTB                     : Rank : Variable                                  : Variable Importance
+--- BDTB                     : ---------------------------------------------------------------------------
+--- BDTB                     :    1 : Dtrk1Pt                                   : 7.137e-01
+--- BDTB                     :    2 : Dalpha                                    : 1.353e-01
+--- BDTB                     :    3 : DtktkRes_alpha                            : 8.797e-02
+--- BDTB                     :    4 : DtktkRes_svpvDistance/DtktkRes_svpvDisErr : 2.792e-02
+--- BDTB                     :    5 : DsvpvDistance/DsvpvDisErr                 : 1.308e-02
+--- BDTB                     :    6 : Dchi2cl                                   : 9.305e-03
+--- BDTB                     :    7 : DRestrk1Pt                                : 4.948e-03
+--- BDTB                     :    8 : DRestrk2Pt                                : 3.203e-03
+--- BDTB                     :    9 : DtktkRespt                                : 3.008e-03
+--- BDTB                     :   10 : DtktkRes_chi2cl                           : 1.558e-03
+--- BDTB                     : ---------------------------------------------------------------------------
+--- Factory                  : 
+--- Factory                  : === Destroy and recreate all methods via weight files for testing ===
+--- Factory                  : 
+--- MethodBase               : Reading weight file: [0;36mweights/TMVAClassification_CutsGA.weights.xml[0m
+--- CutsGA                   : Read method "CutsGA" of type "Cuts"
+--- CutsGA                   : MVA method was trained with TMVA Version: 4.2.0
+--- CutsGA                   : MVA method was trained with ROOT Version: 6.02/13
+--- CutsGA                   : Read cuts optimised using Genetic Algorithm
+--- CutsGA                   : Reading 100 signal efficiency bins for 10 variables
+--- MethodBase               : Reading weight file: [0;36mweights/TMVAClassification_CutsSA.weights.xml[0m
+--- CutsSA                   : Read method "CutsSA" of type "Cuts"
+--- CutsSA                   : MVA method was trained with TMVA Version: 4.2.0
+--- CutsSA                   : MVA method was trained with ROOT Version: 6.02/13
+--- CutsSA                   : Read cuts optimised using Simulated Annealing algorithm
+--- CutsSA                   : Reading 100 signal efficiency bins for 10 variables
+--- MethodBase               : Reading weight file: [0;36mweights/TMVAClassification_LD.weights.xml[0m
+--- LD                       : Read method "LD" of type "LD"
+--- LD                       : MVA method was trained with TMVA Version: 4.2.0
+--- LD                       : MVA method was trained with ROOT Version: 6.02/13
+--- MethodBase               : Reading weight file: [0;36mweights/TMVAClassification_MLP.weights.xml[0m
+--- MLP                      : Read method "MLP" of type "MLP"
+--- MLP                      : MVA method was trained with TMVA Version: 4.2.0
+--- MLP                      : MVA method was trained with ROOT Version: 6.02/13
+--- MLP                      : Building Network
+--- MLP                      : Initializing weights
+--- MethodBase               : Reading weight file: [0;36mweights/TMVAClassification_BDT.weights.xml[0m
+--- BDT                      : Read method "BDT" of type "BDT"
+--- BDT                      : MVA method was trained with TMVA Version: 4.2.0
+--- BDT                      : MVA method was trained with ROOT Version: 6.02/13
+--- MethodBase               : Reading weight file: [0;36mweights/TMVAClassification_BDTB.weights.xml[0m
+--- BDTB                     : Read method "BDTB" of type "BDT"
+--- BDTB                     : MVA method was trained with TMVA Version: 4.2.0
+--- BDTB                     : MVA method was trained with ROOT Version: 6.02/13
+--- Factory                  : Test all methods...
+--- Factory                  : Test method: CutsGA for Classification performance
+--- CutsGA                   : Evaluation of CutsGA on testing sample (2278 events)
+--- CutsGA                   : Elapsed time for evaluation of 2278 events: [1;31m0.019 sec[0m       
+--- Factory                  : Test method: CutsSA for Classification performance
+--- CutsSA                   : Evaluation of CutsSA on testing sample (2278 events)
+--- CutsSA                   : Elapsed time for evaluation of 2278 events: [1;31m0.0169 sec[0m       
+--- Factory                  : Test method: LD for Classification performance
+--- LD                       : Evaluation of LD on testing sample (2278 events)
+--- LD                       : Elapsed time for evaluation of 2278 events: [1;31m0.0175 sec[0m       
+--- LD                       : Evaluation of LD on testing sample
+--- LD                       : Elapsed time for evaluation of 2278 events: [1;31m0.0176 sec[0m       
+--- Factory                  : Test method: MLP for Classification performance
+--- MLP                      : Evaluation of MLP on testing sample (2278 events)
+--- MLP                      : Elapsed time for evaluation of 2278 events: [1;31m0.0315 sec[0m       
+--- Factory                  : Test method: BDT for Classification performance
+--- BDT                      : Evaluation of BDT on testing sample (2278 events)
+--- BDT                      : Elapsed time for evaluation of 2278 events: [1;31m0.404 sec[0m       
+--- Factory                  : Test method: BDTB for Classification performance
+--- BDTB                     : Evaluation of BDTB on testing sample (2278 events)
+--- BDTB                     : Elapsed time for evaluation of 2278 events: [1;31m0.121 sec[0m       
+--- Factory                  : Evaluate all methods...
+--- Factory                  : Evaluate classifier: CutsGA
+[1;31m--- <WARNING> ResultsCutsGA            : You have asked for histogram MVA_EFF_BvsS which does not seem to exist in *Results* .. better don't use it [0m
+[1;31m--- <WARNING> ResultsCutsGA            : You have asked for histogram EFF_BVSS_TR which does not seem to exist in *Results* .. better don't use it [0m
+--- Factory                  : Write evaluation histograms to file
+--- TFHandler_CutsGA         : Plot event variables for CutsGA
+--- TFHandler_CutsGA         : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_CutsGA         :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_CutsGA         : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_CutsGA         :                                   Dtrk1Pt:                                     3.4756                                     2.3377   [                                    0.50015                                     11.849 ]
+--- TFHandler_CutsGA         :                                DRestrk1Pt:                                     5.8962                                     3.0915   [                                    0.56870                                     17.625 ]
+--- TFHandler_CutsGA         :                                DRestrk2Pt:                                     5.5155                                     3.0715   [                                    0.50327                                     17.554 ]
+--- TFHandler_CutsGA         :                                DtktkRespt:                                     11.350                                     2.3297   [                                     8.0081                                     20.028 ]
+--- TFHandler_CutsGA         :                                   Dchi2cl:                                    0.51452                                    0.28862   [                                   0.050063                                    0.99972 ]
+--- TFHandler_CutsGA         :                           DtktkRes_chi2cl:                                    0.53478                                    0.28774   [                                   0.050362                                    0.99993 ]
+--- TFHandler_CutsGA         :                                    Dalpha:                                   0.049031                                   0.044167   [                                 0.00052387                                    0.19992 ]
+--- TFHandler_CutsGA         :                            DtktkRes_alpha:                                   0.091785                                   0.050358   [                                 0.00030253                                    0.19943 ]
+--- TFHandler_CutsGA         :                 DsvpvDistance/DsvpvDisErr:                                     19.299                                     18.793   [                                     2.0054                                     2338.2 ]
+--- TFHandler_CutsGA         : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                     14.188                                     10.220   [                                     2.0010                                     390.65 ]
+--- TFHandler_CutsGA         : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_CutsGA         : Create scatter and profile plots in target-file directory: 
+--- TFHandler_CutsGA         : ROOT/TMVA_pp_10_20.root:/Method_Cuts/CutsGA/CorrelationPlots
+--- Factory                  : Evaluate classifier: CutsSA
+[1;31m--- <WARNING> ResultsCutsSA            : You have asked for histogram MVA_EFF_BvsS which does not seem to exist in *Results* .. better don't use it [0m
+[1;31m--- <WARNING> ResultsCutsSA            : You have asked for histogram EFF_BVSS_TR which does not seem to exist in *Results* .. better don't use it [0m
+[1;31m--- <WARNING> CutsSA                   :  unable to fill 1 efficiency bins [0m
+--- Factory                  : Write evaluation histograms to file
+--- TFHandler_CutsSA         : Plot event variables for CutsSA
+--- TFHandler_CutsSA         : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_CutsSA         :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_CutsSA         : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_CutsSA         :                                   Dtrk1Pt:                                     3.4756                                     2.3377   [                                    0.50015                                     11.849 ]
+--- TFHandler_CutsSA         :                                DRestrk1Pt:                                     5.8962                                     3.0915   [                                    0.56870                                     17.625 ]
+--- TFHandler_CutsSA         :                                DRestrk2Pt:                                     5.5155                                     3.0715   [                                    0.50327                                     17.554 ]
+--- TFHandler_CutsSA         :                                DtktkRespt:                                     11.350                                     2.3297   [                                     8.0081                                     20.028 ]
+--- TFHandler_CutsSA         :                                   Dchi2cl:                                    0.51452                                    0.28862   [                                   0.050063                                    0.99972 ]
+--- TFHandler_CutsSA         :                           DtktkRes_chi2cl:                                    0.53478                                    0.28774   [                                   0.050362                                    0.99993 ]
+--- TFHandler_CutsSA         :                                    Dalpha:                                   0.049031                                   0.044167   [                                 0.00052387                                    0.19992 ]
+--- TFHandler_CutsSA         :                            DtktkRes_alpha:                                   0.091785                                   0.050358   [                                 0.00030253                                    0.19943 ]
+--- TFHandler_CutsSA         :                 DsvpvDistance/DsvpvDisErr:                                     19.299                                     18.793   [                                     2.0054                                     2338.2 ]
+--- TFHandler_CutsSA         : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                     14.188                                     10.220   [                                     2.0010                                     390.65 ]
+--- TFHandler_CutsSA         : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_CutsSA         : Create scatter and profile plots in target-file directory: 
+--- TFHandler_CutsSA         : ROOT/TMVA_pp_10_20.root:/Method_Cuts/CutsSA/CorrelationPlots
+--- Factory                  : Evaluate classifier: LD
+--- LD                       : Loop over test events and fill histograms with classifier response...
+--- LD                       : Also filling probability and rarity histograms (on request)...
+--- Factory                  : Write evaluation histograms to file
+--- TFHandler_LD             : Plot event variables for LD
+--- TFHandler_LD             : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_LD             :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_LD             : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_LD             :                                   Dtrk1Pt:                                     3.4756                                     2.3377   [                                    0.50015                                     11.849 ]
+--- TFHandler_LD             :                                DRestrk1Pt:                                     5.8962                                     3.0915   [                                    0.56870                                     17.625 ]
+--- TFHandler_LD             :                                DRestrk2Pt:                                     5.5155                                     3.0715   [                                    0.50327                                     17.554 ]
+--- TFHandler_LD             :                                DtktkRespt:                                     11.350                                     2.3297   [                                     8.0081                                     20.028 ]
+--- TFHandler_LD             :                                   Dchi2cl:                                    0.51452                                    0.28862   [                                   0.050063                                    0.99972 ]
+--- TFHandler_LD             :                           DtktkRes_chi2cl:                                    0.53478                                    0.28774   [                                   0.050362                                    0.99993 ]
+--- TFHandler_LD             :                                    Dalpha:                                   0.049031                                   0.044167   [                                 0.00052387                                    0.19992 ]
+--- TFHandler_LD             :                            DtktkRes_alpha:                                   0.091785                                   0.050358   [                                 0.00030253                                    0.19943 ]
+--- TFHandler_LD             :                 DsvpvDistance/DsvpvDisErr:                                     19.299                                     18.793   [                                     2.0054                                     2338.2 ]
+--- TFHandler_LD             : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                     14.188                                     10.220   [                                     2.0010                                     390.65 ]
+--- TFHandler_LD             : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_LD             : Create scatter and profile plots in target-file directory: 
+--- TFHandler_LD             : ROOT/TMVA_pp_10_20.root:/Method_LD/LD/CorrelationPlots
+--- Factory                  : Evaluate classifier: MLP
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_MLP            :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_MLP            :                                   Dtrk1Pt:                                   -0.47873                                    0.40955   [                                    -1.0000                                    0.98819 ]
+--- TFHandler_MLP            :                                DRestrk1Pt:                                   -0.38500                                    0.35424   [                                   -0.99545                                    0.95891 ]
+--- TFHandler_MLP            :                                DRestrk2Pt:                                   -0.42528                                    0.35217   [                                   -0.99998                                    0.95508 ]
+--- TFHandler_MLP            :                                DtktkRespt:                                   -0.43162                                    0.39538   [                                   -0.99878                                     1.0411 ]
+--- TFHandler_MLP            :                                   Dchi2cl:                                  -0.022150                                    0.60791   [                                    -1.0004                                    0.99980 ]
+--- TFHandler_MLP            :                           DtktkRes_chi2cl:                                   0.019179                                    0.60687   [                                    -1.0025                                     1.0002 ]
+--- TFHandler_MLP            :                                    Dalpha:                                   -0.51042                                    0.44190   [                                   -0.99573                                    0.99922 ]
+--- TFHandler_MLP            :                            DtktkRes_alpha:                                  -0.084622                                    0.50565   [                                    -1.0032                                    0.99623 ]
+--- TFHandler_MLP            :                 DsvpvDistance/DsvpvDisErr:                                   -0.96579                                   0.037167   [                                   -0.99999                                     3.6202 ]
+--- TFHandler_MLP            : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                   -0.83878                                    0.13520   [                                    -1.0000                                     4.1416 ]
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- MLP                      : Loop over test events and fill histograms with classifier response...
+--- Factory                  : Write evaluation histograms to file
+--- TFHandler_MLP            : Plot event variables for MLP
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_MLP            :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_MLP            :                                   Dtrk1Pt:                                   -0.47873                                    0.40955   [                                    -1.0000                                    0.98819 ]
+--- TFHandler_MLP            :                                DRestrk1Pt:                                   -0.38500                                    0.35424   [                                   -0.99545                                    0.95891 ]
+--- TFHandler_MLP            :                                DRestrk2Pt:                                   -0.42528                                    0.35217   [                                   -0.99998                                    0.95508 ]
+--- TFHandler_MLP            :                                DtktkRespt:                                   -0.43162                                    0.39538   [                                   -0.99878                                     1.0411 ]
+--- TFHandler_MLP            :                                   Dchi2cl:                                  -0.022150                                    0.60791   [                                    -1.0004                                    0.99980 ]
+--- TFHandler_MLP            :                           DtktkRes_chi2cl:                                   0.019179                                    0.60687   [                                    -1.0025                                     1.0002 ]
+--- TFHandler_MLP            :                                    Dalpha:                                   -0.51042                                    0.44190   [                                   -0.99573                                    0.99922 ]
+--- TFHandler_MLP            :                            DtktkRes_alpha:                                  -0.084622                                    0.50565   [                                    -1.0032                                    0.99623 ]
+--- TFHandler_MLP            :                 DsvpvDistance/DsvpvDisErr:                                   -0.96579                                   0.037167   [                                   -0.99999                                     3.6202 ]
+--- TFHandler_MLP            : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                   -0.83878                                    0.13520   [                                    -1.0000                                     4.1416 ]
+--- TFHandler_MLP            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_MLP            : Create scatter and profile plots in target-file directory: 
+--- TFHandler_MLP            : ROOT/TMVA_pp_10_20.root:/Method_MLP/MLP/CorrelationPlots
+--- Factory                  : Evaluate classifier: BDT
+--- BDT                      : Loop over test events and fill histograms with classifier response...
+--- Factory                  : Write evaluation histograms to file
+--- TFHandler_BDT            : Plot event variables for BDT
+--- TFHandler_BDT            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDT            :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_BDT            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDT            :                                   Dtrk1Pt:                                     3.4756                                     2.3377   [                                    0.50015                                     11.849 ]
+--- TFHandler_BDT            :                                DRestrk1Pt:                                     5.8962                                     3.0915   [                                    0.56870                                     17.625 ]
+--- TFHandler_BDT            :                                DRestrk2Pt:                                     5.5155                                     3.0715   [                                    0.50327                                     17.554 ]
+--- TFHandler_BDT            :                                DtktkRespt:                                     11.350                                     2.3297   [                                     8.0081                                     20.028 ]
+--- TFHandler_BDT            :                                   Dchi2cl:                                    0.51452                                    0.28862   [                                   0.050063                                    0.99972 ]
+--- TFHandler_BDT            :                           DtktkRes_chi2cl:                                    0.53478                                    0.28774   [                                   0.050362                                    0.99993 ]
+--- TFHandler_BDT            :                                    Dalpha:                                   0.049031                                   0.044167   [                                 0.00052387                                    0.19992 ]
+--- TFHandler_BDT            :                            DtktkRes_alpha:                                   0.091785                                   0.050358   [                                 0.00030253                                    0.19943 ]
+--- TFHandler_BDT            :                 DsvpvDistance/DsvpvDisErr:                                     19.299                                     18.793   [                                     2.0054                                     2338.2 ]
+--- TFHandler_BDT            : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                     14.188                                     10.220   [                                     2.0010                                     390.65 ]
+--- TFHandler_BDT            : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDT            : Create scatter and profile plots in target-file directory: 
+--- TFHandler_BDT            : ROOT/TMVA_pp_10_20.root:/Method_BDT/BDT/CorrelationPlots
+--- Factory                  : Evaluate classifier: BDTB
+--- BDTB                     : Loop over test events and fill histograms with classifier response...
+--- Factory                  : Write evaluation histograms to file
+--- TFHandler_BDTB           : Plot event variables for BDTB
+--- TFHandler_BDTB           : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDTB           :                                  Variable                                         Mean                                         RMS                                 [        Min                                         Max ]
+--- TFHandler_BDTB           : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDTB           :                                   Dtrk1Pt:                                     3.4756                                     2.3377   [                                    0.50015                                     11.849 ]
+--- TFHandler_BDTB           :                                DRestrk1Pt:                                     5.8962                                     3.0915   [                                    0.56870                                     17.625 ]
+--- TFHandler_BDTB           :                                DRestrk2Pt:                                     5.5155                                     3.0715   [                                    0.50327                                     17.554 ]
+--- TFHandler_BDTB           :                                DtktkRespt:                                     11.350                                     2.3297   [                                     8.0081                                     20.028 ]
+--- TFHandler_BDTB           :                                   Dchi2cl:                                    0.51452                                    0.28862   [                                   0.050063                                    0.99972 ]
+--- TFHandler_BDTB           :                           DtktkRes_chi2cl:                                    0.53478                                    0.28774   [                                   0.050362                                    0.99993 ]
+--- TFHandler_BDTB           :                                    Dalpha:                                   0.049031                                   0.044167   [                                 0.00052387                                    0.19992 ]
+--- TFHandler_BDTB           :                            DtktkRes_alpha:                                   0.091785                                   0.050358   [                                 0.00030253                                    0.19943 ]
+--- TFHandler_BDTB           :                 DsvpvDistance/DsvpvDisErr:                                     19.299                                     18.793   [                                     2.0054                                     2338.2 ]
+--- TFHandler_BDTB           : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:                                     14.188                                     10.220   [                                     2.0010                                     390.65 ]
+--- TFHandler_BDTB           : --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--- TFHandler_BDTB           : Create scatter and profile plots in target-file directory: 
+--- TFHandler_BDTB           : ROOT/TMVA_pp_10_20.root:/Method_BDT/BDTB/CorrelationPlots
+--- Factory                  : 
+--- Factory                  : Inter-MVA correlation matrix (signal):
+--- Factory                  : ----------------------------------------
+--- Factory                  :               LD     MLP     BDT    BDTB
+--- Factory                  :      LD:  +1.000  +0.537  +0.599  +0.631
+--- Factory                  :     MLP:  +0.537  +1.000  +0.800  +0.780
+--- Factory                  :     BDT:  +0.599  +0.800  +1.000  +0.821
+--- Factory                  :    BDTB:  +0.631  +0.780  +0.821  +1.000
+--- Factory                  : ----------------------------------------
+--- Factory                  : 
+--- Factory                  : Inter-MVA correlation matrix (background):
+--- Factory                  : ----------------------------------------
+--- Factory                  :               LD     MLP     BDT    BDTB
+--- Factory                  :      LD:  +1.000  +0.681  +0.229  +0.197
+--- Factory                  :     MLP:  +0.681  +1.000  +0.578  +0.453
+--- Factory                  :     BDT:  +0.229  +0.578  +1.000  +0.673
+--- Factory                  :    BDTB:  +0.197  +0.453  +0.673  +1.000
+--- Factory                  : ----------------------------------------
+--- Factory                  : 
+--- Factory                  : Correlations between input variables and MVA response (signal):
+--- Factory                  : ----------------------------------------
+--- Factory                  :                                                 LD     MLP     BDT    BDTB
+--- Factory                  :                                   Dtrk1Pt:  +0.850  +0.393  +0.470  +0.493
+--- Factory                  :                                DRestrk1Pt:  -0.330  -0.199  -0.132  -0.159
+--- Factory                  :                                DRestrk2Pt:  -0.205  -0.025  -0.013  -0.110
+--- Factory                  :                                DtktkRespt:  -0.722  -0.304  -0.198  -0.362
+--- Factory                  :                                   Dchi2cl:  +0.198  +0.052  +0.122  -0.014
+--- Factory                  :                           DtktkRes_chi2cl:  +0.042  +0.017  +0.029  +0.032
+--- Factory                  :                                    Dalpha:  -0.386  -0.428  -0.497  -0.429
+--- Factory                  :                            DtktkRes_alpha:  +0.771  +0.376  +0.384  +0.546
+--- Factory                  :                 DsvpvDistance/DsvpvDisErr:  +0.272  +0.255  +0.212  +0.318
+--- Factory                  : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:  +0.167  +0.181  +0.132  +0.124
+--- Factory                  : ----------------------------------------
+--- Factory                  : 
+--- Factory                  : Correlations between input variables and MVA response (background):
+--- Factory                  : ----------------------------------------
+--- Factory                  :                                                 LD     MLP     BDT    BDTB
+--- Factory                  :                                   Dtrk1Pt:  +0.074  +0.419  +0.575  +0.649
+--- Factory                  :                                DRestrk1Pt:  -0.069  -0.002  +0.137  +0.009
+--- Factory                  :                                DRestrk2Pt:  -0.108  -0.135  -0.013  -0.072
+--- Factory                  :                                DtktkRespt:  -0.296  -0.230  +0.205  -0.106
+--- Factory                  :                                   Dchi2cl:  +0.322  +0.261  +0.189  +0.024
+--- Factory                  :                           DtktkRes_chi2cl:  +0.039  +0.143  +0.071  -0.002
+--- Factory                  :                                    Dalpha:  -0.316  -0.035  +0.004  -0.083
+--- Factory                  :                            DtktkRes_alpha:  +0.268  +0.264  +0.231  +0.114
+--- Factory                  :                 DsvpvDistance/DsvpvDisErr:  -0.723  -0.492  -0.008  +0.075
+--- Factory                  : DtktkRes_svpvDistance/DtktkRes_svpvDisErr:  +0.164  -0.078  +0.136  +0.020
+--- Factory                  : ----------------------------------------
+--- Factory                  : 
+--- Factory                  : The following "overlap" matrices contain the fraction of events for which 
+--- Factory                  : the MVAs 'i' and 'j' have returned conform answers about "signal-likeness"
+--- Factory                  : An event is signal-like, if its MVA output exceeds the following value:
+--- Factory                  : --------------------
+--- Factory                  :  Method:  Cut value:
+--- Factory                  : --------------------
+--- Factory                  :      LD:     -0.123
+--- Factory                  :     MLP:     +0.551
+--- Factory                  :     BDT:     -0.064
+--- Factory                  :    BDTB:     -0.280
+--- Factory                  : --------------------
+--- Factory                  : which correspond to the working point: eff(signal) = 1 - eff(background)
+--- Factory                  : Note: no correlations and overlap with cut method are provided at present
+--- Factory                  : 
+--- Factory                  : Inter-MVA overlap matrix (signal):
+--- Factory                  : ----------------------------------------
+--- Factory                  :               LD     MLP     BDT    BDTB
+--- Factory                  :      LD:  +1.000  +0.907  +0.868  +0.896
+--- Factory                  :     MLP:  +0.907  +1.000  +0.945  +0.939
+--- Factory                  :     BDT:  +0.868  +0.945  +1.000  +0.948
+--- Factory                  :    BDTB:  +0.896  +0.939  +0.948  +1.000
+--- Factory                  : ----------------------------------------
+--- Factory                  : 
+--- Factory                  : Inter-MVA overlap matrix (background):
+--- Factory                  : ----------------------------------------
+--- Factory                  :               LD     MLP     BDT    BDTB
+--- Factory                  :      LD:  +1.000  +0.855  +0.810  +0.803
+--- Factory                  :     MLP:  +0.855  +1.000  +0.899  +0.864
+--- Factory                  :     BDT:  +0.810  +0.899  +1.000  +0.895
+--- Factory                  :    BDTB:  +0.803  +0.864  +0.895  +1.000
+--- Factory                  : ----------------------------------------
+--- Factory                  : 
+--- Factory                  : Evaluation results ranked by best signal efficiency and purity (area)
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : MVA              Signal efficiency at bkg eff.(error):       | Sepa-    Signifi- 
+--- Factory                  : Method:          @B=0.01    @B=0.10    @B=0.30    ROC-integ. | ration:  cance:   
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : BDT            : 0.652(00)  0.869(00)  0.946(00)    0.951    | 0.673    1.883
+--- Factory                  : MLP            : 0.408(00)  0.827(00)  0.959(00)    0.943    | 0.637    1.612
+--- Factory                  : BDTB           : 0.564(00)  0.799(00)  0.919(00)    0.926    | 0.610    1.613
+--- Factory                  : CutsGA         : 0.565(12)  0.804(09)  0.927(06)    0.920    | --       --
+--- Factory                  : CutsSA         : 0.529(12)  0.789(09)  0.901(07)    0.905    | --       --
+--- Factory                  : LD             : 0.529(00)  0.758(00)  0.871(00)    0.899    | 0.503    1.157
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : 
+--- Factory                  : Testing efficiency compared to training efficiency (overtraining check)
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : MVA              Signal efficiency: from test sample (from training sample) 
+--- Factory                  : Method:          @B=0.01             @B=0.10            @B=0.30   
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : BDT            : 0.652 (0.772)       0.869 (0.886)      0.946 (0.944)
+--- Factory                  : MLP            : 0.408 (0.552)       0.827 (0.851)      0.959 (0.961)
+--- Factory                  : BDTB           : 0.564 (0.626)       0.799 (0.817)      0.919 (0.916)
+--- Factory                  : CutsGA         : 0.565 (0.582)       0.804 (0.867)      0.927 (0.959)
+--- Factory                  : CutsSA         : 0.529 (0.584)       0.789 (0.825)      0.901 (0.933)
+--- Factory                  : LD             : 0.529 (0.464)       0.758 (0.759)      0.871 (0.890)
+--- Factory                  : --------------------------------------------------------------------------------
+--- Factory                  : 
+--- Dataset:Default          : Created tree 'TestTree' with 2278 events
+--- Dataset:Default          : Created tree 'TrainTree' with 2278 events
+--- Factory                  :   
+--- Factory                  : [1mThank you for using TMVA![0m
+--- Factory                  : [1mFor citation information, please visit: http://tmva.sf.net/citeTMVA.html[0m
+==> Wrote root file: ROOT/TMVA_pp_10_20.root
+==> TMVAClassification is done!
