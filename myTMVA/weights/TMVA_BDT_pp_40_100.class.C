@@ -10,7 +10,7 @@ Method         : BDT::BDT
 TMVA Release   : 4.2.0         [262656]
 ROOT Release   : 6.02/13       [393741]
 Creator        : leure
-Date           : Wed Jun  7 21:04:56 2017
+Date           : Tue Jun 13 21:20:57 2017
 Host           : Linux vocms029.cern.ch 2.6.32-504.12.2.el6.x86_64 #1 SMP Thu Mar 12 07:33:00 CET 2015 x86_64 x86_64 x86_64 GNU/Linux
 Dir            : /data/leure/TMVA_Luke/myTMVA
 Training events: 12459

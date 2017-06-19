@@ -9,9 +9,8 @@ DOANALYSISPbPb_FIT=0
 DOANALYSISPbPb_MCSTUDY=0
 DORAA=0
 
-PDFOUTPUTLOCATIONANDNAME="plotFits/etaComparison/withD/etaSoleVar"
+PDFOUTPUTLOCATIONANDNAME="plotFits/crossSection/misc"
 PDFOUTPUTLOCATIONANDNAME=$PDFOUTPUTLOCATIONANDNAME"/"$METHOD".pdf"
-
 
 #LUMIPP=27.748 # paper 20170224, B analysis
 #LUMIPP=25.8 # D analysis
@@ -19,29 +18,64 @@ LUMIPP=27.4 # D analysis
 INPUTMCPP="../test/ntB_pp_MC_"$BINMIN"_"$BINMAX".root"
 INPUTDATAPP="../test/ntB_pp_Data_"$BINMIN"_"$BINMAX".root"
 #TRGPP="(HLT_DmesonPPTrackingGlobal_Dpt8_v1 || HLT_DmesonPPTrackingGlobal_Dpt15_v1 || HLT_DmesonPPTrackingGlobal_Dpt30_v1 || HLT_DmesonPPTrackingGlobal_Dpt50_v1)"
-TRGPP="(HLT_DmesonPPTrackingGlobal_Dpt8_v1 || HLT_DmesonPPTrackingGlobal_Dpt15_v1 || HLT_DmesonPPTrackingGlobal_Dpt20_v1 || HLT_DmesonPPTrackingGlobal_Dpt30_v1 || HLT_DmesonPPTrackingGlobal_Dpt50_v1)";
+#TRGPP="(HLT_DmesonPPTrackingGlobal_Dpt8_v1 || HLT_DmesonPPTrackingGlobal_Dpt15_v1 || HLT_DmesonPPTrackingGlobal_Dpt20_v1 || HLT_DmesonPPTrackingGlobal_Dpt30_v1 || HLT_DmesonPPTrackingGlobal_Dpt50_v1)";
+
+
 #TRGPP="(HLT_L1MinimumBiasHF1OR_part1_v1||HLT_L1MinimumBiasHF1OR_part2_v1||HLT_L1MinimumBiasHF1OR_part3_v1||HLT_L1MinimumBiasHF1OR_part4_v1||HLT_L1MinimumBiasHF1OR_part5_v1||HLT_L1MinimumBiasHF1OR_part6_v1||HLT_L1MinimumBiasHF1OR_part7_v1||HLT_L1MinimumBiasHF1OR_part8_v1||HLT_L1MinimumBiasHF1OR_part9_v1||HLT_L1MinimumBiasHF1OR_part10_v1||HLT_L1MinimumBiasHF1OR_part11_v1||HLT_L1MinimumBiasHF1OR_part12_v1||HLT_L1MinimumBiasHF1OR_part13_v1||HLT_L1MinimumBiasHF1OR_part14_v1||HLT_L1MinimumBiasHF1OR_part15_v1||HLT_L1MinimumBiasHF1OR_part16_v1||HLT_L1MinimumBiasHF1OR_part17_v1||HLT_L1MinimumBiasHF1OR_part18_v1||HLT_L1MinimumBiasHF1OR_part19_v1)"
 #TRGPP="1"
 TRGPPMC="1"
 
 # prefilters
-CUTPP="abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 &&  Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0" # && abs(Dtrk1Eta)<1.5 && abs(DRestrk1Eta)<1.5 && abs(DRestrk2Eta)<1.5 && TMath::Abs(Dy)<1."
+CUTPP="abs(PVz)<15 && pBeamScrapingFilter && pPAprimaryVertexFilter && Dmass>5&&Dmass<6 && Dtrk1highPurity && DRestrk1highPurity && DRestrk2highPurity && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 &&  Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 && abs(Dtrk1Eta)<1.5 && abs(DRestrk1Eta)<1.5 && abs(DRestrk2Eta)<1.5 && TMath::Abs(Dy)<1."
 
-#additional prefilter for eta with D study
-  CUTPP=$CUTPP" && Dtrk1Pt>1.6895522537308205 && DRestrk1Pt>0.84031338681733003 && DRestrk2Pt>-0.19704445193327663 && DtktkRespt>7.8528812603344429 && Dchi2cl>0.048708611970225621 && DtktkRes_chi2cl>0.049529709539947606 && Dalpha<0.20016788953458109 && DtktkRes_alpha<0.19977244360529264 && DsvpvDistance/DsvpvDisErr>2.9937475547073209 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.3877793894046793" 
-
-#20-100 eta as sole variables--------------------------------------------------------
-
+#cuts for 20-40 ----------------------------------------------------------------
+if [ "$BINMIN" = "20" -a "$BINMAX" = "40" ]; then
+echo "20-40"
+TRGPP="HLT_DmesonPPTrackingGlobal_Dpt15_v1";
 # cutsGA
 if [ "$METHOD" = "cutsGA" ]; then
-CUTPP=$CUTPP" && TMath::Abs(Dtrk1Eta)<1.4994522210775576 && TMath::Abs(DRestrk1Eta)<1.1710479117275256 && TMath::Abs(DRestrk2Eta)<1.5180633374261123 && TMath::Abs(Dy)<1.0002828879185079"
+CUTPP=$CUTPP" && Dtrk1Pt>1.5119066783466506 && DRestrk1Pt>0.30536377790210678 && DRestrk2Pt>0.36338212403760983 && DtktkRespt>7.8250794441627303 && Dchi2cl>0.051459643814556165 && DtktkRes_chi2cl>0.043374341702374246 && Dalpha<0.19826644414562558 && DtktkRes_alpha<0.20011998802556244 && DsvpvDistance/DsvpvDisErr>3.1977048738596423 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.2666225677967122"
+fi
+
+# cutsSA
+if [ "$METHOD" = "cutsSA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>1.4844397710905781 && DRestrk1Pt>1.1235527445660458 && DRestrk2Pt>0.47124198653284882 && DtktkRespt>7.9203352686361228 && Dchi2cl>0.069173950728496747 && DtktkRes_chi2cl>0.058931826062455228 && Dalpha<0.15566915489397984 && DtktkRes_alpha<0.19714307317206459 && DsvpvDistance/DsvpvDisErr>3.7061885740403979 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>4.3363138312246523"
+fi
+
+### LD
+if [ "$METHOD" = "LD" ]; then
+  CUTPP=$CUTPP" && LD > "
+fi
+  
+# MLP
+if [ "$METHOD" = "MLP" ]; then
+  CUTPP=$CUTPP" && MLP >"
+fi
+
+# BDT
+if [ "$METHOD" = "BDT" ]; then
+  CUTPP=$CUTPP" && BDT > .2"
+fi
+  
+# BDTB
+if [ "$METHOD" = "BDTB" ]; then
+  CUTPP=$CUTPP" && BDTB >  "
+fi
+fi
+#cuts for 40-100 ----------------------------------------------------------------
+if [ "$BINMIN" = "40" -a "$BINMAX" = "100" ]; then
+echo "40-100"
+TRGPP="HLT_DmesonPPTrackingGlobal_Dpt30_v1";
+# cutsGA
+if [ "$METHOD" = "cutsGA" ]; then
+CUTPP=$CUTPP" && Dtrk1Pt>3.1283988174549324 && DRestrk1Pt>0.87633860909130834 && DRestrk2Pt>0.49219084823940806 && DtktkRespt>7.4482612362135594 && Dchi2cl>0.042252454543442439 && DtktkRes_chi2cl>0.055413157979800419 && Dalpha<0.075990655431829757 && DtktkRes_alpha<0.1960009217583123 && DsvpvDistance/DsvpvDisErr>2.9228773605879357 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>2.9237382468189037"
 
 fi
 
 # cutsSA
 if [ "$METHOD" = "cutsSA" ]; then
-echo
- 
+CUTPP=$CUTPP" && Dtrk1Pt>2.2832389864149776 && DRestrk1Pt>1.1785505053073921 && DRestrk2Pt>0.11226191496246736 && DtktkRespt>7.9509242348913354 && Dchi2cl>0.048233308827930033 && DtktkRes_chi2cl>0.047793650985811807 && Dalpha<0.12148664710213197 && DtktkRes_alpha<0.18348806753328883 && DsvpvDistance/DsvpvDisErr>2.8109177447134006 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.7490936393580707"
+
 fi
 
 ### LD
@@ -63,7 +97,7 @@ fi
 if [ "$METHOD" = "BDTB" ]; then
   CUTPP=$CUTPP" && BDTB >  "
 fi
-
+fi
 SELGENPP="TMath::Abs(Gy)<2.4 && abs(GpdgId)==521 && (GisSignal==13 || GisSignal==14)"
 SELGENPPACCPP="TMath::Abs(Gy)<2.4 && abs(GpdgId)==521 && (GisSignal==13 || GisSignal==14) && Gtk1pt>1.0 && TMath::Abs(Gtk1eta)<2.4"
 RECOONLYPP=$CUTPP

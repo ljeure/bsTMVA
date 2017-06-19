@@ -1,9 +1,9 @@
 #!/bin/bash
 
-BINMIN="20"
+BINMIN="40"
 BINMAX="100"
 
-mkdir plotFits/etaComparison/withD/etaSoleVar
+mkdir plotFits/crossSection/misc
 
 METHOD="cutsGA"
 source doAnalysis.sh
@@ -13,9 +13,8 @@ source doAnalysis.sh
 #source doAnalysis.sh
 #METHOD="MLP"
 #source doAnalysis.sh
-METHOD="BDT"
-source doAnalysis.sh
+#METHOD="BDT"
+#source doAnalysis.sh
 #METHOD="BDTB"
 #source doAnalysis.sh
 
-cp -r  plotFits/etaComparison/withD/etaSoleVar ~

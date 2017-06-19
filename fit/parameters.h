@@ -3,7 +3,7 @@
 #define D0_MASS 1.8648
 
 const int nBins=1;
-double ptBins[nBins+1] = {20,100};
+double ptBins[nBins+1] = {40,100};
 
 const int nBinsInc=1;
 double ptBinsInc[nBinsInc+1] = {7.,50.};
@@ -31,6 +31,3 @@ const int HMAX=300;
 
 const double binsize=((double)(HMAX)-(double)(HMIN))/(double)(BIN_NUM);
 Double_t BRchain=6.09604e-5; //6.09604e-5
-
-
-

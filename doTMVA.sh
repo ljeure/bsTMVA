@@ -1,7 +1,7 @@
 #!/bin/bash
 
-DOTMVA=0
-DOMAKEVAR=0
+DOTMVA=1
+DOMAKEVAR=1
 DOMERGE=1
 DOREADXML=1
 #
@@ -20,7 +20,7 @@ fi
 
 #
 # if working on several ptbins, BDT.C need to be changed
-PTBIN=(20 100)
+PTBIN=(40 100)
 RAA=(0.49)
 COLSYST=('pp')
 isPbPb=(0)

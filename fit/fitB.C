@@ -24,6 +24,9 @@ TString collisionsystem;
 Float_t hiBinMin,hiBinMax,centMin,centMax;
 double _ErrCor=1;
 
+// declaration of calculateCrossSection fucntion
+Double_t calculateCrossSection(Double_t yield, Double_t yieldErr);
+
 int _nBins = nBins;
 double *_ptBins = ptBins;
 
@@ -219,25 +222,33 @@ void getNPFnPar(TString npfname, float par[]){
 }
 
 //TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,bool isPbPb,TF1* &total,Float_t centmin, Float_t centmax, float NPpar[])
-TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,bool isPbPb,TF1* &total,Float_t centmin, Float_t centmax, TString npfit, TString pdfOutputLocationAndName=" ")
-{
+TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
+    bool isPbPb,TF1* &total,Float_t centmin, Float_t centmax, TString npfit,
+    TString pdfOutputLocationAndName=" ") {
 	static Int_t count=0;
 	count++;
 	TCanvas* c= new TCanvas(Form("c%d",count),"",600,600);
 	TH1D* h = new TH1D(Form("h-%d",count),"",nbinsmasshisto,minhisto,maxhisto);
-	TH1D* hMCSignal = new TH1D(Form("hMCSignal-%d",count),"",nbinsmasshisto,minhisto,maxhisto);
+	TH1D* hMCSignal = new TH1D(Form("hMCSignal-%d",count),"",
+      nbinsmasshisto,minhisto,maxhisto);
 
 	//TString iNP="7.26667e+00*Gaus(x,5.10472e+00,2.63158e-02)/(sqrt(2*3.14159)*2.63158e-02)+4.99089e+01*Gaus(x,4.96473e+00,9.56645e-02)/(sqrt(2*3.14159)*9.56645e-02)+3.94417e-01*(3.74282e+01*Gaus(x,5.34796e+00,3.11510e-02)+1.14713e+01*Gaus(x,5.42190e+00,1.00544e-01))";
 	//TString iNP=Form("TMath::Erf((x-%f)/%f)+1", NPpar[0], NPpar[1]);
 	TString iNP = npfit;
-	TF1* f = new TF1(Form("f%d",count),"[0]*([7]*Gaus(x,[1],[2])/(sqrt(2*3.14159)*[2])+(1-[7])*Gaus(x,[1],[8])/(sqrt(2*3.14159)*[8]))+[3]+[4]*x+[5]*("+iNP+")");
+	TF1* f = new TF1(Form("f%d",count),
+      "[0]*([7]*Gaus(x,[1],[2])/(sqrt(2*3.14159)*[2])+(1-[7])*Gaus(x,[1],[8])/(sqrt(2*3.14159)*[8]))+[3]+[4]*x+[5]*("+iNP+")");
 	f->SetNpx(5000);
 	f->SetLineWidth(5);
 
-	if(isMC==1) nt->Project(Form("h-%d",count),"Dmass",Form("%s*(%s&&Dpt>%f&&Dpt<%f)*(1/%s)","1",seldata.Data(),ptmin,ptmax,weightdata.Data()));   
-	else nt->Project(Form("h-%d",count),"Dmass",Form("(%s&&Dpt>%f&&Dpt<%f)*(1/%s)",seldata.Data(),ptmin,ptmax,weightdata.Data()));   
+	if(isMC==1) nt->Project(Form("h-%d",count),"Dmass",
+      Form("%s*(%s&&Dpt>%f&&Dpt<%f)*(1/%s)","1",seldata.Data(),ptmin,ptmax,
+        weightdata.Data()));   
+	else nt->Project(Form("h-%d",count),"Dmass",
+      Form("(%s&&Dpt>%f&&Dpt<%f)*(1/%s)",seldata.Data(),ptmin,ptmax,
+        weightdata.Data()));   
 
-	ntMC->Project(Form("hMCSignal-%d",count),"Dmass",Form("%s&&Dpt>%f&&Dpt<%f",Form("%s&&Dgen==23333",selmc.Data()),ptmin,ptmax));
+	ntMC->Project(Form("hMCSignal-%d",count),"Dmass",Form("%s&&Dpt>%f&&Dpt<%f",
+        Form("%s&&Dgen==23333",selmc.Data()),ptmin,ptmax));
 	clean0(h);
 
 	//h->Draw();
@@ -278,7 +289,8 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,bool i
 	f->FixParameter(8,f->GetParameter(8));
 	f->ReleaseParameter(5);
 	printf("Fixed para.:\n");
-	printf("%f, %f, %f\n", f->GetParameter(2), f->GetParameter(7), f->GetParameter(8));
+	printf("%f, %f, %f\n", f->GetParameter(2),
+      f->GetParameter(7), f->GetParameter(8));
 	h->Fit(Form("f%d",count),"q","",minhisto,maxhisto);
 	h->Fit(Form("f%d",count),"q","",minhisto,maxhisto);
 	f->ReleaseParameter(1);
@@ -315,8 +327,10 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,bool i
 	//Bkpi->SetLineWidth(5);
 	Bkpi->SetLineWidth(9);
 
-	TF1 *mass = new TF1(Form("fmass%d",count),"[0]*([3]*Gaus(x,[1],[2])/(sqrt(2*3.14159)*[2])+(1-[3])*Gaus(x,[1],[4])/(sqrt(2*3.14159)*[4]))");
-	mass->SetParameters(f->GetParameter(0),f->GetParameter(1),f->GetParameter(2),f->GetParameter(7),f->GetParameter(8));
+	TF1 *mass = new TF1(Form("fmass%d",count),
+      "[0]*([3]*Gaus(x,[1],[2])/(sqrt(2*3.14159)*[2])+(1-[3])*Gaus(x,[1],[4])/(sqrt(2*3.14159)*[4]))");
+	mass->SetParameters(f->GetParameter(0),f->GetParameter(1),f->GetParameter(2),
+      f->GetParameter(7),f->GetParameter(8));
 	mass->SetParError(0,f->GetParError(0));
 	mass->SetParError(1,f->GetParError(1));
 	mass->SetParError(2,f->GetParError(2));
@@ -374,6 +388,12 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,bool i
 
 	Double_t yield = mass->Integral(minhisto,maxhisto)/binwidthmass;
 	Double_t yieldErr = mass->Integral(minhisto,maxhisto)/binwidthmass*mass->GetParError(0)/mass->GetParameter(0);
+
+  std::cout << "yield first " << yield << std::endl;
+
+  // calculate and display the cross section
+  std::cout << "cross section: " << calculateCrossSection(yield, yieldErr)
+    << std::endl << std::endl;
 
 	//TLegend* leg = new TLegend(0.62,0.58,0.82,0.88,NULL,"brNDC");
     TLegend *leg = new TLegend(0.525,0.38,0.85,0.70,NULL,"brNDC");//paper
@@ -462,7 +482,7 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,bool i
 
 	//tex = new TLatex(0.22,0.78,"|y| < 2.4");
 	//tex = new TLatex(0.700,0.77,"|y| < 2.4");
-	tex = new TLatex(0.725,0.75,"|y| < 2.4");
+	tex = new TLatex(0.725,0.75,"|y| < 1.0");
 	tex->SetNDC();
 	tex->SetTextFont(42);
 	//tex->SetTextSize(0.04);
@@ -534,4 +554,106 @@ double ErrorOnSigma(double width, double errwidth, double smear, double errsmear
 	double squarederroronsigma=(1+smear)*(1+smear)*errwidth*errwidth+width*width*errsmearing*errsmearing;
 	double erroronsigma=TMath::Sqrt(squarederroronsigma);
 	return erroronsigma;
+}
+
+
+/*
+ * calculates the adjusted efficiency of B production to be
+ * used in cross section calculations
+ * yield: the yield calculated in fit()
+ * yieldErr the error of the yield
+ */
+Double_t calculateCrossSection(Double_t yield, Double_t yieldErr) { 
+
+  std::cout << "yield error " << yieldErr << std::endl;
+  // import the monte carlo data
+  TFile *f = TFile::Open("/data/HeavyFlavourRun2/TMVA_Luke/Dntuple_20170428_pp_BuToD0Pi_20151212_v2_DfinderMC_pp_20170423_BtoD0Pi_Dpt5Dy1Tketa2_pthatweight.root");
+
+  // reconstructed mc data
+  TTree* tree = (TTree*) f->Get("ntBptoD0pi");
+
+  // generated mc data
+  TTree* genTree = (TTree*) f->Get("ntGen");
+
+  // the prefilter used in the anlysis with non-numerical expressions removed
+  // (the non-numerical expressions are used for noise-reduction in data and
+  //  are unnecessary for monte carlo data)
+  TCut prefilter = "abs(PVz)<15 && TMath::Abs(Dy)<1. && Dmass>5&&Dmass<6 && Dtrk1PtErr/Dtrk1Pt<0.3 && DRestrk1PtErr/DRestrk1Pt<0.3 && DRestrk2PtErr/DRestrk2Pt<0.3 && Dtrk1Pt>0.5 && DRestrk1Pt>0.5 && DRestrk2Pt>0.5 && DtktkRespt>8 && abs(DtktkResmass-1.87)<0.03 && Dchi2cl>0.05 && DtktkRes_chi2cl>0.05 && Dalpha<0.2 && DtktkRes_alpha<0.2 && (DsvpvDistance/DsvpvDisErr)>2.0 && (DtktkRes_svpvDistance/DtktkRes_svpvDisErr)>2.0 && abs(Dtrk1Eta)<1.5 && abs(DRestrk1Eta)<1.5 && abs(DRestrk2Eta)<1.5";
+
+  // cuts for the 20-40GeV range. Cuts were optimised using came from TMVA's 
+  // cutsGA method. the aCut cuts are all the cuts optimized to extract signal
+  // when used with the above prefilter
+  TCut aCut_20_40 = "Dpt>20 && Dpt<40 && Dtrk1Pt>1.5119066783466506 && DRestrk1Pt>0.30536377790210678 && DRestrk2Pt>0.36338212403760983 && DtktkRespt>7.8250794441627303 && Dchi2cl>0.051459643814556165 && DtktkRes_chi2cl>0.043374341702374246 && Dalpha<0.19826644414562558 && DtktkRes_alpha<0.20011998802556244 && DsvpvDistance/DsvpvDisErr>3.1977048738596423 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>3.2666225677967122";
+
+  // cuts for 40-100 GeV range.
+  TCut aCut_40_100 = "Dpt>40 && Dpt<100 && Dtrk1Pt>3.1283988174549324 && DRestrk1Pt>0.87633860909130834 && DRestrk2Pt>0.49219084823940806 && DtktkRespt>7.4482612362135594 && Dchi2cl>0.042252454543442439 && DtktkRes_chi2cl>0.055413157979800419 && Dalpha<0.075990655431829757 && DtktkRes_alpha<0.1960009217583123 && DsvpvDistance/DsvpvDisErr>2.9228773605879357 && DtktkRes_svpvDistance/DtktkRes_svpvDisErr>2.9237382468189037";
+
+  // use the appropriate beta_prescale for the triggers. It is assumed that
+  // either the 15-30 trigger or the 30-50 trigger are being used during this
+  // analysis
+  Double_t beta_prescale15 = 1/(2.594206e+01); // prescale for 15-30 trigger
+  Double_t beta_prescale30 = 1/(4.070169e+00); // prescale for 30-50 trigger
+  Double_t beta_prescale;
+
+  if (ptBins[0] == 20) beta_prescale = beta_prescale15;
+  else if (ptBins[0] == 40) beta_prescale = beta_prescale30;
+  else std::cout << "ERROR no beta_prescale given for selected pt bins.\n"
+    << "See fitB.C line 618\n";
+  
+  // BR is the branching ratio which is the D_bar0 pi+ decay fraction times
+  // the D->k pi decay fraction. D_bar0 pi+ ratio is taken from 
+  // http://pdg.arsip.lipi.go.id/2013/listings/rpp2013-list-B-plus-minus.pdf
+  Double_t BR = 1.8864e-4; //4.8e-3*3.93e-2
+  Double_t luminosity = 27.4;
+ 
+  // histograms for the reconstructed and generated data
+  TH1D* hPtMC = new TH1D("hPtMC","",nBins,ptBins);
+  TH1D* hPtGen = new TH1D("hPtGen","",nBins,ptBins);
+
+  //----------------------------------------------------------------------------
+
+  // reconstructed data projected onto histogram with optimized cuts applied.
+  // The normalization by bindwidth doesn't really matter because the generated
+  // data is given the same normalization
+  tree->Project("hPtMC","Dpt",
+      (aCut_20_40 || aCut_40_100) && prefilter && "(Dgen==23333)");
+  //divideBinWidth(hPtMC);
+
+  // generated data projected onto histogram with a cut on rapidity.
+  // the GisSignal conditions ensure that only the B meson data is used
+  genTree->Project("hPtGen","Gpt",
+    "TMath::Abs(Gy)<1. && (GisSignal == 13 || GisSignal == 14)");
+  //divideBinWidth(hPtGen);
+
+  // a histogram for the efficiency
+  TH1D* hEff = (TH1D*)hPtMC->Clone("hEff");
+  hEff->SetTitle(";D^{0} p_{T} (GeV/c);Efficiency");
+  hEff->Scale(1/hPtGen->GetBinContent(1));
+
+  // hPt holds the yield, which is a parameter of calculateCrossSection
+  TH1D* hPt = new TH1D("hPt","",nBins,ptBins);
+  for (int i=0;i<nBins;i++) {
+      hPt->SetBinContent(i+1,yield);
+      hPt->SetBinError(i+1,yieldErr);
+  }
+
+  //
+  TH1D* hPtCor = (TH1D*)hPt->Clone("hPtCor");
+  hPtCor->SetTitle(";D^{0} p_{T} (GeV/c);Corrected dN(D^{0})/dp_{T}");
+  hPtCor->Scale(1/hEff->GetBinContent(1));
+
+  // hPtSigma is a histogram to hold the cross section, which is normalized 
+  // by the luminosity, branching ratio, and beta prescale. The 1/2 factor makes
+  // this the cross section for particles only, not including antiparticles
+  TH1D* hPtSigma = (TH1D*)hPtCor->Clone("hPtSigma");
+  hPtSigma->SetTitle(";D^{0} p_{T} (GeV/c);d#sigma(D^{0})/dp_{T} (pb/GeV)");
+  hPtSigma->Scale(1./(2*luminosity*BR*beta_prescale));
+
+  return hPtSigma->GetBinContent(1);
+
+  // results so far:
+  // for 40-100:
+  //  cross section is
+  // for 20-40:
+  //  cross section is 
 }

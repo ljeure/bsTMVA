@@ -192,7 +192,7 @@ void TMVAClassification(int pbpb=0, float ptMin=10., float ptMax=20., TString my
   // Define the input variables that shall be used for the MVA training
   // note that you may also use variable expressions, such as: "3*var1/var2*abs(var3)"
   // [all types of expressions that can also be parsed by TTree::Draw( "expression" )]
-/*  factory->AddVariable("Dtrk1Pt");//>
+  factory->AddVariable("Dtrk1Pt");//>
   factory->AddVariable("DRestrk1Pt");//>
   factory->AddVariable("DRestrk2Pt");//>
   factory->AddVariable("DtktkRespt");//>
@@ -202,11 +202,11 @@ void TMVAClassification(int pbpb=0, float ptMin=10., float ptMax=20., TString my
   factory->AddVariable("DtktkRes_alpha");//>
   factory->AddVariable("DsvpvDistance/DsvpvDisErr");//>
   factory->AddVariable("DtktkRes_svpvDistance/DtktkRes_svpvDisErr");//>
-*/  factory->AddVariable("TMath::Abs(Dtrk1Eta)");//>
+/*  factory->AddVariable("TMath::Abs(Dtrk1Eta)");//>
   factory->AddVariable("TMath::Abs(DRestrk1Eta)");//>
   factory->AddVariable("TMath::Abs(DRestrk2Eta)");//>
   factory->AddVariable("TMath::Abs(Dy)");//>
-
+*/
   // You can add so-called "Spectator variables", which are not used in the MVA training,
   // but will appear in the final "TestTree" produced by TMVA. This TestTree will contain the
    // input variables, the response values of all trained MVAs, and the spectator variables
@@ -337,14 +337,12 @@ void TMVAClassification(int pbpb=0, float ptMin=10., float ptMax=20., TString my
    if (Use["CutsGA"])
      factory->BookMethod( TMVA::Types::kCuts, "CutsGA",
             //"H:!V:FitMethod=GA:EffSel:Steps=30:Cycles=3:PopSize=400:SC_steps=10:SC_rate=5:SC_factor=0.95:VarProp[0]=FMax:VarProp[1]=FMax:VarProp[2]=FMax");
-			  //"H:!V:FitMethod=GA:EffSel:Steps=5:Cycles=3:PopSize=400:SC_steps=10:SC_rate=5:SC_factor=0.95:VarProp[0]=FMax:VarProp[1]=FMax:VarProp[2]=FMax:VarProp[3]=FMax:VarProp[4]=FMax:VarProp[5]=FMax:VarProp[6]=FMin:VarProp[7]=FMin:VarProp[8]=FMax:VarProp[9]=FMax:VarProp[10]=FMin:VarProp[11]=FMin:VarProp[12]=FMin:VarProp[13]=FMin");
-			  "H:!V:FitMethod=GA:EffSel:Steps=5:Cycles=3:PopSize=400:SC_steps=10:SC_rate=5:SC_factor=0.95:VarProp[0]=FMin:VarProp[1]=FMin:VarProp[2]=FMin:VarProp[3]=FMin");
+			  "H:!V:FitMethod=GA:EffSel:Steps=5:Cycles=3:PopSize=400:SC_steps=10:SC_rate=5:SC_factor=0.95:VarProp[0]=FMax:VarProp[1]=FMax:VarProp[2]=FMax:VarProp[3]=FMax:VarProp[4]=FMax:VarProp[5]=FMax:VarProp[6]=FMin:VarProp[7]=FMin:VarProp[8]=FMax:VarProp[9]=FMax");
 
    if (Use["CutsSA"])
       factory->BookMethod( TMVA::Types::kCuts, "CutsSA",
                          //"!H:!V:FitMethod=SA:EffSel:MaxCalls=150000:KernelTemp=IncAdaptive:InitialTemp=1e+6:MinTemp=1e-6:Eps=1e-10:UseDefaultScale:VarProp[0]=FMax:VarProp[1]=FMax:VarProp[2]=FMax" );
-//                           "!H:!V:FitMethod=SA:EffSel:MaxCalls=150000:KernelTemp=IncAdaptive:InitialTemp=1e+6:MinTemp=1e-6:Eps=1e-10:UseDefaultScale:VarProp[0]=FMax:VarProp[1]=FMax:VarProp[2]=FMax:VarProp[3]=FMax:VarProp[4]=FMax:VarProp[5]=FMax:VarProp[6]=FMin:VarProp[7]=FMin:VarProp[8]=FMax:VarProp[9]=FMax" );
-        "!H:!V:FitMethod=SA:EffSel:MaxCalls=200000:KernelTemp=IncAdaptive:InitialTemp=1e+6:MinTemp=1e-6:Eps=1e-10:UseDefaultScale:VarProp[0]=FMin:VarProp[1]=FMin:VarProp[2]=FMin:VarProp[3]=FMin");
+                           "!H:!V:FitMethod=SA:EffSel:MaxCalls=150000:KernelTemp=IncAdaptive:InitialTemp=1e+6:MinTemp=1e-6:Eps=1e-10:UseDefaultScale:VarProp[0]=FMax:VarProp[1]=FMax:VarProp[2]=FMax:VarProp[3]=FMax:VarProp[4]=FMax:VarProp[5]=FMax:VarProp[6]=FMin:VarProp[7]=FMin:VarProp[8]=FMax:VarProp[9]=FMax" );
 
    // Likelihood ("naive Bayes estimator")
    if (Use["Likelihood"])

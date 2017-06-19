@@ -4,11 +4,11 @@
     <Info name="TMVA Release" value="4.2.0 [262656]"/>
     <Info name="ROOT Release" value="6.02/13 [393741]"/>
     <Info name="Creator" value="leure"/>
-    <Info name="Date" value="Wed Jun  7 20:26:31 2017"/>
+    <Info name="Date" value="Tue Jun 13 20:57:50 2017"/>
     <Info name="Host" value="Linux vocms029.cern.ch 2.6.32-504.12.2.el6.x86_64 #1 SMP Thu Mar 12 07:33:00 CET 2015 x86_64 x86_64 x86_64 GNU/Linux"/>
     <Info name="Dir" value="/data/leure/TMVA_Luke/myTMVA"/>
     <Info name="Training events" value="7463"/>
-    <Info name="TrainingTime" value="3.87151909e+00"/>
+    <Info name="TrainingTime" value="3.81952500e+00"/>
     <Info name="AnalysisType" value="Classification"/>
   </GeneralInfo>
   <Options>

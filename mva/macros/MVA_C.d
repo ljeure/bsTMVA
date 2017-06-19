@@ -1,7 +1,7 @@
 
 # DO NOT DELETE
 
-./MVA_C.so: ../header.h ../../myTMVA/weights/TMVA_LD_pp_20_100.class.C
+./MVA_C.so: ../header.h ../../myTMVA/weights/TMVA_LD_pp_40_100.class.C
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/vector
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/bits/stl_algobase.h
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/x86_64-redhat-linux-gnu/bits/c++config.h
@@ -82,9 +82,9 @@
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/bits/ostream.tcc
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/istream
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/bits/istream.tcc
-./MVA_C.so: ../../myTMVA/weights/TMVA_MLP_pp_20_100.class.C
-./MVA_C.so: ../../myTMVA/weights/TMVA_BDT_pp_20_100.class.C
-./MVA_C.so: ../../myTMVA/weights/TMVA_BDTB_pp_20_100.class.C
+./MVA_C.so: ../../myTMVA/weights/TMVA_MLP_pp_40_100.class.C
+./MVA_C.so: ../../myTMVA/weights/TMVA_BDT_pp_40_100.class.C
+./MVA_C.so: ../../myTMVA/weights/TMVA_BDTB_pp_40_100.class.C
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/lcg/root/6.02.12/include/TFile.h
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/atomic
 ./MVA_C.so: /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/gcc/4.9.1-cms/include/c++/4.9.1/bits/c++0x_warning.h
