@@ -1,32 +1,31 @@
 #!/bin/bash
 
-DOTMVA=1
-DOMAKEVAR=1
-DOMERGE=1
+DOTMVA=0
+DOMAKEVAR=0
+DOMERGE=0
 DOREADXML=1
 #
-OUTPUTDIR="test"
+#OUTPUTDIR="test"
+OUTPUTDIR="/data/leure/bsTMVA/test"
 inputMCs=(
 "/data/HeavyFlavourRun2/TMVA_Luke/Dntuple_20170428_pp_BuToD0Pi_20151212_v2_DfinderMC_pp_20170423_BtoD0Pi_Dpt5Dy1Tketa2_pthatweight.root"
-"/data/wangj/TutorialsSamples/tmvaBntupleRunII/Bntuple20160816_Bpt7svpv5p5Bpt10svpv3p5_BfinderMC_PbPb_Pythia8_BuToJpsiK_Bpt0_Pthat5_TuneCUEP8M1_20160816_bPt5jpsiPt0tkPt0p8_Bp.root"
+"/data/bmeson2017/MC/loop_BsMC_PbPb_pthat10.root"
 )
 inputDatas=(
 "/data/HeavyFlavourRun2/TMVA_Luke/Dntuple_20170428_HeavyFlavor_DfinderData_pp_20170423_BtoD0Pi_Dpt10Dy1Alpha0p2Svpv2Tketa1p5EvtSkim.root"
-"/data/wangj/TutorialsSamples/tmvaBntupleRunII/Bntuple20160816_Bpt7svpv5p5Bpt10svpv3p5_BfinderData_PbPb_20160816_bPt5jpsiPt0tkPt0p8_Bp.root"
+"/data/wangj/Data2015/Bntuple/PbPb/Bntuple_BfinderData_PbPb_20160406_bPt5jpsiPt0tkPt0p8_BpB0BsX_skimhlt.root"
 )
 if [ ! -d $OUTPUTDIR ]; then
     mkdir $OUTPUTDIR
 fi
 
-#
 # if working on several ptbins, BDT.C need to be changed
-PTBIN=(40 100)
+PTBIN=(7 10)
 RAA=(0.49)
-COLSYST=('pp')
-isPbPb=(0)
+COLSYST=('PbPb')
+isPbPb=(1)
 
-MVA=('CutsGA' 'CutsSA' 'LD' 'MLP' 'BDT' 'BDTB')
-#MVA=('CutsGA' 'BDT')
+MVA=('CutsGA')
 
 nPT=$((${#PTBIN[@]}-1))
 nMVA=${#MVA[@]}

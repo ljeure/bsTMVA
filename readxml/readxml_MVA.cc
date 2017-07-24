@@ -7,9 +7,9 @@ using namespace std;
 TString cuts;
 TString cutb;
 TString cutg;
-//TString evtweight="1";
-TString evtweight="pthatweight";
-TString hltPrescale="((DtktkRespt>8&&DtktkRespt<15)*1/(9.740888e+01)+(DtktkRespt>15&&DtktkRespt<20)*1/(2.594206e+01)+(DtktkRespt>20&&DtktkRespt<30)*1/(8.305474e+00)+(DtktkRespt>30&&DtktkRespt<50)*1/(4.070169e+00)+(DtktkRespt>50)*1/(1))";
+TString evtweight="1";
+//TString evtweight="pthatweight";
+TString hltPrescale="((Btktkpt>8&&Btktkpt<15)*1/(9.740888e+01)+(Btktkpt>15&&Btktkpt<20)*1/(2.594206e+01)+(Btktkpt>20&&Btktkpt<30)*1/(8.305474e+00)+(Btktkpt>30&&Btktkpt<50)*1/(4.070169e+00)+(Btktkpt>50)*1/(1))";
 //TString hltPrescale="1/9.740888e+01";
 
 void readxml_MVA(TString inputSname, TString inputBname,
@@ -38,8 +38,8 @@ void readxml_MVA(TString inputSname, TString inputBname,
   mycutg = isPbPb?mycutg_PP:mycutg_pp;
   colsyst = isPbPb?"PbPb":"pp";
 
-  cuts = isPbPb?Form("(%s)&&Dpt>%f&&Dpt<%f&&hiBin>=0&&hiBin<=200",mycuts.Data(),ptmin,ptmax):Form("(%s)&&Dpt>%f&&Dpt<%f",mycuts.Data(),ptmin,ptmax);
-  cutb = isPbPb?Form("(%s)&&Dpt>%f&&Dpt<%f&&hiBin>=0&&hiBin<=200",mycutb.Data(),ptmin,ptmax):Form("(%s)&&Dpt>%f&&Dpt<%f",mycutb.Data(),ptmin,ptmax);
+  cuts = isPbPb?Form("(%s)&&Bpt>%f&&Bpt<%f&&hiBin>=0&&hiBin<=200",mycuts.Data(),ptmin,ptmax):Form("(%s)&&Bpt>%f&&Bpt<%f",mycuts.Data(),ptmin,ptmax);
+  cutb = isPbPb?Form("(%s)&&Bpt>%f&&Bpt<%f&&hiBin>=0&&hiBin<=200",mycutb.Data(),ptmin,ptmax):Form("(%s)&&Bpt>%f&&Bpt<%f",mycutb.Data(),ptmin,ptmax);
   cutg = isPbPb?Form("(%s)&&Gpt>%f&&Gpt<%f&&hiBin>=0&&hiBin<=200",mycutg.Data(),ptmin,ptmax):Form("(%s)&&Gpt>%f&&Gpt<%f",mycutg.Data(),ptmin,ptmax);
 
   TLatex* texPar = new TLatex(0.18,0.93, Form("%s 5.02 TeV B^{+}",colsyst.Data()));
@@ -64,24 +64,33 @@ void readxml_MVA(TString inputSname, TString inputBname,
   cout<<" ╘════════════╧════════════════════════════╧════════╛"<<endl;
   cout<<endl;
 
+  cout << "new files\n";
+
   TFile *inputS = new TFile(inputSname.Data());
   TFile *inputB = new TFile(inputBname.Data());
+  cout << "new files\n";
 
-  TTree* background = (TTree*)inputB->Get("ntBptoD0pi");
+  TTree* background = (TTree*)inputB->Get("ntphi");
   background->AddFriend("ntHlt");
   background->AddFriend("ntHi");
   background->AddFriend("ntSkim");
+  std::cout << "working\n";
   background->AddFriend("mvaTree");
+  std::cout << "2working\n";
 
-  TTree* signal = (TTree*)inputS->Get("ntBptoD0pi");
+  TTree* signal = (TTree*)inputS->Get("ntphi");
   signal->AddFriend("ntHlt");
   signal->AddFriend("ntHi");
   signal->AddFriend("ntSkim");
+  std::cout << "3working\n";
   signal->AddFriend("mvaTree");
+  std::cout << "4working\n";
 
   TTree* generated = (TTree*)inputS->Get("ntGen");
   generated->AddFriend("ntHlt");
   generated->AddFriend("ntHi");
+  
+  cout << "gets background signal and generated\n";
 
   const Int_t nBDT = 50+1;//
   Float_t minBDT = -1;//
@@ -292,7 +301,7 @@ void calRatio(TTree* signal, TTree* background, TTree* generated, Float_t* resul
 
   //Background candidate number
   TH1D* hmassB = new TH1D("hmassB",";B mass (GeV/c^{2});Background Entries",50,5,6);
-  background->Project("hmassB","Dmass",selb);
+  background->Project("hmassB","Bmass",selb);
   TCanvas* cmassB = new TCanvas("cmassB","",600,600);
   hmassB->Draw();
   cmassB->SaveAs(Form("plots/%s_%s_pT_%.0f_%.0f_Background.pdf",MVAtype.Data(),colsyst.Data(),ptmin,ptmax));
@@ -322,8 +331,8 @@ void calRatio(TTree* signal, TTree* background, TTree* generated, Float_t* resul
   TH1D* hrec = new TH1D("hrec",";B p_{T} (GeV/c);Signal reco entries",nbin-1,pt);
   TH1D* hgen = new TH1D("hgen",";B p_{T} (GeV/c);Generated entries",nbin-1,pt);
   TH1D* heff = new TH1D("heff",";B p_{T} (GeV/c);Prefilter efficiency",nbin-1,pt);
-  if(isPbPb) signal->Project("hrec","Dpt",Form("%s*(%s&&hiBin>=0&&hiBin<=200)*(%s)",evtweight.Data(),mycuts.Data(),hltPrescale.Data()));
-  else signal->Project("hrec","Dpt",Form("%s*(%s)*(%s)",evtweight.Data(),mycuts.Data(),hltPrescale.Data()));
+  if(isPbPb) signal->Project("hrec","Bpt",Form("%s*(%s&&hiBin>=0&&hiBin<=200)*(%s)",evtweight.Data(),mycuts.Data(),hltPrescale.Data()));
+  else signal->Project("hrec","Bpt",Form("%s*(%s)*(%s)",evtweight.Data(),mycuts.Data(),hltPrescale.Data()));
   if(isPbPb) generated->Project("hgen","Gpt",Form("%s*(%s&&hiBin>=0&&hiBin<=200)",evtweight.Data(),mycutg.Data()));
   else generated->Project("hgen","Gpt",Form("%s*(%s)",evtweight.Data(),mycutg.Data()));
 
@@ -337,7 +346,8 @@ void calRatio(TTree* signal, TTree* background, TTree* generated, Float_t* resul
 
   //use lumi//
   Double_t lumi = isPbPb?lum_PP:lum_pp;
-  Double_t BR = 1.8864e-4;//4.8e-3*3.93e-2
+  std::cout << "lumi is " << lumi << std::endl;
+  Double_t BR = 3.12e-5;
   Double_t deltapt = 0.25;
   //central[i] - in pb/GeV/c
 

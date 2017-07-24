@@ -86,10 +86,11 @@ void fitB(int usePbPb=0, TString inputdata="/data/wangj/Data2015/Bntuple/pp/ntB_
 	weightdata="1";
 	if(doDataCor == 1){
 		if(collisionsystem=="pp"||collisionsystem=="PP"||collisionsystem=="ppInc"||collisionsystem=="PbPbInc"){
-			weightdata="(-6.098782e-02+4.106526e-04*Dpt+Dpt*Dpt*1.434530e-03+Dpt*Dpt*Dpt*-4.695382e-05+Dpt*Dpt*Dpt*Dpt*4.363289e-07)";
+      std::cout << "thinks we're doing pp\n";
+			weightdata="(-6.098782e-02+4.106526e-04*Bpt+Bpt*Bpt*1.434530e-03+Bpt*Bpt*Bpt*-4.695382e-05+Bpt*Bpt*Bpt*Bpt*4.363289e-07)";
 		}
 		else{
-			weightdata="( (hiBin>=0&& hiBin<20)*(3.117632e-02+-1.159784e-02*Dpt+Dpt*Dpt*1.219370e-03+Dpt*Dpt*Dpt*-2.963314e-05+Dpt*Dpt*Dpt*Dpt*2.301367e-07) + (hiBin>=20&&hiBin<60)*(4.379875e-02+-1.553269e-02*Dpt+Dpt*Dpt*1.603658e-03+Dpt*Dpt*Dpt*-3.987113e-05+Dpt*Dpt*Dpt*Dpt*3.104066e-07) + (hiBin>=60&&hiBin<100)*(6.381744e-02+-2.182311e-02*Dpt+Dpt*Dpt*2.237331e-03+Dpt*Dpt*Dpt*-6.150110e-05+Dpt*Dpt*Dpt*Dpt*5.475154e-07) + (hiBin>=100&&hiBin<=200)*(7.876289e-02+-2.580109e-02*Dpt+Dpt*Dpt*2.555978e-03+Dpt*Dpt*Dpt*-6.953917e-05+Dpt*Dpt*Dpt*Dpt*6.101012e-07) )";
+			weightdata="( (hiBin>=0&& hiBin<20)*(3.117632e-02+-1.159784e-02*Bpt+Bpt*Bpt*1.219370e-03+Bpt*Bpt*Bpt*-2.963314e-05+Bpt*Bpt*Bpt*Bpt*2.301367e-07) + (hiBin>=20&&hiBin<60)*(4.379875e-02+-1.553269e-02*Bpt+Bpt*Bpt*1.603658e-03+Bpt*Bpt*Bpt*-3.987113e-05+Bpt*Bpt*Bpt*Bpt*3.104066e-07) + (hiBin>=60&&hiBin<100)*(6.381744e-02+-2.182311e-02*Bpt+Bpt*Bpt*2.237331e-03+Bpt*Bpt*Bpt*-6.150110e-05+Bpt*Bpt*Bpt*Bpt*5.475154e-07) + (hiBin>=100&&hiBin<=200)*(7.876289e-02+-2.580109e-02*Bpt+Bpt*Bpt*2.555978e-03+Bpt*Bpt*Bpt*-6.953917e-05+Bpt*Bpt*Bpt*Bpt*6.101012e-07) )";
 		}
 	}
 
@@ -99,21 +100,21 @@ void fitB(int usePbPb=0, TString inputdata="/data/wangj/Data2015/Bntuple/pp/ntB_
 	TFile* inf = new TFile(inputdata.Data());
 	TFile* infMC = new TFile(inputmc.Data());
 
-	TTree* nt = (TTree*)inf->Get("ntBptoD0pi");
+	TTree* nt = (TTree*)inf->Get("ntphi");
 	nt->AddFriend("ntHlt");
 	nt->AddFriend("ntHi");
 	nt->AddFriend("ntSkim");
-    nt->AddFriend("mvaTree");
+  nt->AddFriend("mvaTree");
 
 	TTree* ntGen = (TTree*)infMC->Get("ntGen");
 	ntGen->AddFriend("ntHlt");
 	ntGen->AddFriend("ntHi");
 
-	TTree* ntMC = (TTree*)infMC->Get("ntBptoD0pi");
+	TTree* ntMC = (TTree*)infMC->Get("ntphi");
 	ntMC->AddFriend("ntHlt");
 	ntMC->AddFriend("ntHi");
 	ntMC->AddFriend("ntSkim");
-    ntMC->AddFriend("mvaTree");
+  ntMC->AddFriend("mvaTree");
 	ntMC->AddFriend(ntGen);
 
 	TH1D* hPt = new TH1D("hPt","",_nBins,_ptBins);
@@ -139,17 +140,17 @@ void fitB(int usePbPb=0, TString inputdata="/data/wangj/Data2015/Bntuple/pp/ntB_
 		hPt->SetBinError(i+1,yieldErr/(_ptBins[i+1]-_ptBins[i]));
 	}  
 
-	ntMC->Project("hPtMC","Dpt",TCut(weight)*(TCut(selmceff.Data())&&"(Dgen==23333)"));
+	ntMC->Project("hPtMC","Bpt",TCut(weight)*(TCut(selmceff.Data())&&"(Bgen==23333)"));
 	divideBinWidth(hPtMC);
-	ntMC->Project("hPtRecoTruth","Dpt",TCut(selmceff.Data())&&"(Dgen==23333)");
+	ntMC->Project("hPtRecoTruth","Bpt",TCut(selmceff.Data())&&"(Bgen==23333)");
 	divideBinWidth(hPtRecoTruth);
 	ntGen->Project("hPtGen","Gpt",TCut(weightgen)*(TCut(selmcgen.Data())));
 	divideBinWidth(hPtGen);
 
 	TCanvas* cPt =  new TCanvas("cPt","",600,600);
 	cPt->SetLogy();
-	hPt->SetXTitle("D^{0} p_{T} (GeV/c)");
-	hPt->SetYTitle("Uncorrected dN(D^{0})/dp_{T}");
+	hPt->SetXTitle("B^{s} p_{T} (GeV/c)");
+	hPt->SetYTitle("Uncorrected dN(B^{s})/dp_{T}");
 	hPt->Sumw2();
 	hPt->Draw();
 	if(isMC==1)
@@ -225,6 +226,7 @@ void getNPFnPar(TString npfname, float par[]){
 TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
     bool isPbPb,TF1* &total,Float_t centmin, Float_t centmax, TString npfit,
     TString pdfOutputLocationAndName=" ") {
+  std::cout << "starting fit " << ptmin << ptmax << std::endl;
 	static Int_t count=0;
 	count++;
 	TCanvas* c= new TCanvas(Form("c%d",count),"",600,600);
@@ -240,15 +242,15 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 	f->SetNpx(5000);
 	f->SetLineWidth(5);
 
-	if(isMC==1) nt->Project(Form("h-%d",count),"Dmass",
-      Form("%s*(%s&&Dpt>%f&&Dpt<%f)*(1/%s)","1",seldata.Data(),ptmin,ptmax,
+	if(isMC==1) nt->Project(Form("h-%d",count),"Bmass",
+      Form("%s*(%s&&Bpt>%f&&Bpt<%f)*(1/%s)","1",seldata.Data(),ptmin,ptmax,
         weightdata.Data()));   
-	else nt->Project(Form("h-%d",count),"Dmass",
-      Form("(%s&&Dpt>%f&&Dpt<%f)*(1/%s)",seldata.Data(),ptmin,ptmax,
+	else nt->Project(Form("h-%d",count),"Bmass",
+      Form("(%s&&Bpt>%f&&Bpt<%f)*(1/%s)",seldata.Data(),ptmin,ptmax,
         weightdata.Data()));   
 
-	ntMC->Project(Form("hMCSignal-%d",count),"Dmass",Form("%s&&Dpt>%f&&Dpt<%f",
-        Form("%s&&Dgen==23333",selmc.Data()),ptmin,ptmax));
+	ntMC->Project(Form("hMCSignal-%d",count),"Bmass",Form("%s&&Bpt>%f&&Bpt<%f",
+        Form("%s&&Bgen==23333",selmc.Data()),ptmin,ptmax));
 	clean0(h);
 
 	//h->Draw();
@@ -309,22 +311,16 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 	background->SetParameter(1,f->GetParameter(4));
 	background->SetLineColor(4);
 	background->SetRange(minhisto,maxhisto);
-	//background->SetLineStyle(2);//PAS
 	background->SetLineStyle(7);//paper
-	//background->SetLineWidth(5);
 	background->SetLineWidth(9);
 
 	TF1 *Bkpi = new TF1(Form("fBkpi%d",count),"[0]*("+iNP+")");
 	Bkpi->SetParameter(0,f->GetParameter(5));
 	Bkpi->SetRange(minhisto,maxhisto);
 	Bkpi->SetLineStyle(1);
-	//Bkpi->SetFillStyle(3004);//PAS
 	Bkpi->SetFillStyle(3005);//paper
-	//Bkpi->SetLineColor(kGreen+1);//PAS
-	//Bkpi->SetFillColor(kGreen+1);//PAS
 	Bkpi->SetLineColor(kGreen+4);//paper
 	Bkpi->SetFillColor(kGreen+4);//paper
-	//Bkpi->SetLineWidth(5);
 	Bkpi->SetLineWidth(9);
 
 	TF1 *mass = new TF1(Form("fmass%d",count),
@@ -336,43 +332,27 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 	mass->SetParError(2,f->GetParError(2));
 	mass->SetParError(7,f->GetParError(7));
 	mass->SetParError(8,f->GetParError(8));
-	//mass->SetLineColor(2);//PAS
-	//mass->SetFillColor(2);//PAS
 	mass->SetFillColor(kOrange-3);//paper
 	mass->SetLineColor(kOrange-3);//paper
-	//mass->SetFillStyle(3004);//PAS
 	mass->SetFillStyle(3002);//paper
-	//mass->SetLineWidth(5);
 	mass->SetLineWidth(9);
-	//mass->SetLineStyle(2);//PAS
 	mass->SetLineStyle(7);//paper
 
-	//h->SetXTitle("m_{#mu#muK} (GeV/c^{2})");
 	h->SetXTitle("m_{B} (GeV/c^{2})");
 	h->SetYTitle("Events / (20 MeV/c^{2})");
 	h->GetXaxis()->CenterTitle();
 	h->GetYaxis()->CenterTitle();
-//	h->SetAxisRange(0,h->GetMaximum()*1.4*1.2,"Y");
 	h->SetAxisRange(0,(h->GetBinContent(h->GetMaximumBin())+h->GetBinError(h->GetMaximumBin()))*1.4*1.2,"Y");
-	//h->GetXaxis()->SetTitleOffset(1.3);
-	//h->GetYaxis()->SetTitleOffset(1.8);
 	h->GetXaxis()->SetTitleOffset(0.9);
 	h->GetYaxis()->SetTitleOffset(1.3);
-	//h->GetXaxis()->SetLabelOffset(0.007);
-	//h->GetYaxis()->SetLabelOffset(0.007);
-	//h->GetXaxis()->SetTitleSize(0.045);
-	//h->GetYaxis()->SetTitleSize(0.045);
 	h->GetXaxis()->SetTitleSize(0.07);
 	h->GetYaxis()->SetTitleSize(0.07);
 	h->GetXaxis()->SetTitleFont(42);
 	h->GetYaxis()->SetTitleFont(42);
 	h->GetXaxis()->SetLabelFont(42);
 	h->GetYaxis()->SetLabelFont(42);
-	//h->GetXaxis()->SetLabelSize(0.04);
-	//h->GetYaxis()->SetLabelSize(0.04);
 	h->GetXaxis()->SetLabelSize(0.06);
 	h->GetYaxis()->SetLabelSize(0.06);
-	//h->SetMarkerSize(1.0);
 	h->SetMarkerSize(1.55);
 	h->SetMarkerStyle(20);
 	h->SetLineColor(1);
@@ -391,12 +371,12 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 
   std::cout << "yield first " << yield << std::endl;
 
-  // calculate and display the cross section
+/*  // calculate and display the cross section
   std::cout << "cross section: " << calculateCrossSection(yield, yieldErr)
     << std::endl << std::endl;
-
+*/
 	//TLegend* leg = new TLegend(0.62,0.58,0.82,0.88,NULL,"brNDC");
-    TLegend *leg = new TLegend(0.525,0.38,0.85,0.70,NULL,"brNDC");//paper
+  TLegend *leg = new TLegend(0.525,0.38,0.85,0.70,NULL,"brNDC");//paper
 	leg->SetBorderSize(0);
 	//leg->SetTextSize(0.04);
 	leg->SetTextSize(0.06);
@@ -420,13 +400,6 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 	//texChi->Draw();
 	printf("NDF: %d, chi: %f, prob: %f\n", f->GetNDF(), f->GetChisquare(), f->GetProb());
 
-	//TLatex* texCms = new TLatex(0.18,0.93, "#scale[1.25]{CMS} Preliminary");
-	//TLatex* texCms = new TLatex(0.18,0.93, "#scale[1.25]{CMS}");
-	//texCms->SetNDC();
-	//texCms->SetTextAlign(12);
-	//texCms->SetTextSize(0.04);
-	//texCms->SetTextFont(42);
-	//texCms->Draw();
 	TLatex* texcms = new TLatex(0.22,0.87,"CMS");
 	texcms->SetNDC();
 	texcms->SetTextAlign(13);
@@ -452,19 +425,15 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 	else texCol= new TLatex(0.94,0.93, Form("350.1 #mub^{-1} (%s 5.02 TeV)","PbPb"));
 	texCol->SetNDC();
 	texCol->SetTextAlign(32);
-	//texCol->SetTextSize(0.04);
 	texCol->SetTextSize(0.06);
 	texCol->SetTextFont(42);
 	texCol->Draw();
 
 	TLatex* tex;
 
-	//tex = new TLatex(0.22,0.73,Form("%.0f < p_{T} < %.0f GeV/c",ptmin,ptmax));
-	//tex = new TLatex(0.488,0.84,Form("%.0f < p_{T} < %.0f GeV/c",ptmin,ptmax));
 	tex = new TLatex(0.488,0.82,Form("%.0f < p_{T} < %.0f GeV/c",ptmin,ptmax));
 	tex->SetNDC();
 	tex->SetTextFont(42);
-	//tex->SetTextSize(0.04);
 	tex->SetTextSize(0.06);
 	tex->SetLineWidth(2);
 	tex->Draw();
@@ -480,12 +449,9 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 		//if(collisionsystem!="pp"&&collisionsystem!="PP"&&collisionsystem!="ppInc"&&collisionsystem!="PbPbInc") tex->Draw();
 	}
 
-	//tex = new TLatex(0.22,0.78,"|y| < 2.4");
-	//tex = new TLatex(0.700,0.77,"|y| < 2.4");
 	tex = new TLatex(0.725,0.75,"|y| < 1.0");
 	tex->SetNDC();
 	tex->SetTextFont(42);
-	//tex->SetTextSize(0.04);
 	tex->SetTextSize(0.06);
 	tex->SetLineWidth(2);
 	tex->Draw();
@@ -499,6 +465,7 @@ TF1 *fit(TTree *nt, TTree *ntMC, Double_t ptmin, Double_t ptmax, int isMC,
 
 	//if(!isPbPb) c->SaveAs(Form("plotFits/BMass%s_%d.pdf",collisionsystem.Data(),count));
 	//else c->SaveAs(Form("plotFits/BMass%s_%.0f_%.0f_%d.pdf",collisionsystem.Data(),centMin,centMax,count));
+  std::cout << "ptmin ptmax " << ptmin << " " << ptmax << std::endl;
 	TString _postfix = "";
 	if(weightdata!="1") _postfix = "_EFFCOR";
 	if(isPbPb && isMC==0){
@@ -563,14 +530,16 @@ double ErrorOnSigma(double width, double errwidth, double smear, double errsmear
  * yield: the yield calculated in fit()
  * yieldErr the error of the yield
  */
+//FIXME has not been adapted for Bs
 Double_t calculateCrossSection(Double_t yield, Double_t yieldErr) { 
 
+  std::cout << "trying to calculate cross section\n";
   std::cout << "yield error " << yieldErr << std::endl;
   // import the monte carlo data
   TFile *f = TFile::Open("/data/HeavyFlavourRun2/TMVA_Luke/Dntuple_20170428_pp_BuToD0Pi_20151212_v2_DfinderMC_pp_20170423_BtoD0Pi_Dpt5Dy1Tketa2_pthatweight.root");
 
   // reconstructed mc data
-  TTree* tree = (TTree*) f->Get("ntBptoD0pi");
+  TTree* tree = (TTree*) f->Get("ntphi");
 
   // generated mc data
   TTree* genTree = (TTree*) f->Get("ntGen");

@@ -10,10 +10,10 @@ Method         : LD::LD
 TMVA Release   : 4.2.0         [262656]
 ROOT Release   : 6.02/13       [393741]
 Creator        : leure
-Date           : Tue Jun  6 17:36:22 2017
+Date           : Mon Jun 26 17:58:40 2017
 Host           : Linux vocms029.cern.ch 2.6.32-504.12.2.el6.x86_64 #1 SMP Thu Mar 12 07:33:00 CET 2015 x86_64 x86_64 x86_64 GNU/Linux
 Dir            : /data/leure/TMVA_Luke/myTMVA
-Training events: 1850
+Training events: 2336
 Analysis type  : [Classification]
 
 
@@ -33,16 +33,16 @@ IgnoreNegWeightsInTraining: "False" [Events with negative weights are ignored in
 #VAR -*-*-*-*-*-*-*-*-*-*-*-* variables *-*-*-*-*-*-*-*-*-*-*-*-
 
 NVar 10
-Dtrk1Pt                       Dtrk1Pt                       Dtrk1Pt                       Dtrk1Pt                                                         'F'    [0.504267275333,21.5219936371]
-DRestrk1Pt                    DRestrk1Pt                    DRestrk1Pt                    DRestrk1Pt                                                      'F'    [0.611003220081,26.4953784943]
-DRestrk2Pt                    DRestrk2Pt                    DRestrk2Pt                    DRestrk2Pt                                                      'F'    [0.501210987568,27.0570068359]
-DtktkRespt                    DtktkRespt                    DtktkRespt                    DtktkRespt                                                      'F'    [8.00263690948,29.6220283508]
-Dchi2cl                       Dchi2cl                       Dchi2cl                       Dchi2cl                                                         'F'    [0.0501793064177,0.999834001064]
-DtktkRes_chi2cl               DtktkRes_chi2cl               DtktkRes_chi2cl               DtktkRes_chi2cl                                                 'F'    [0.0503450036049,0.999778449535]
-Dalpha                        Dalpha                        Dalpha                        Dalpha                                                          'F'    [0.000363119848771,0.199936017394]
+Dtrk1Pt                       Dtrk1Pt                       Dtrk1Pt                       Dtrk1Pt                                                         'F'    [0.501306593418,21.5219936371]
+DRestrk1Pt                    DRestrk1Pt                    DRestrk1Pt                    DRestrk1Pt                                                      'F'    [0.611003220081,26.909122467]
+DRestrk2Pt                    DRestrk2Pt                    DRestrk2Pt                    DRestrk2Pt                                                      'F'    [0.501210987568,25.7579021454]
+DtktkRespt                    DtktkRespt                    DtktkRespt                    DtktkRespt                                                      'F'    [8.01282119751,29.5177097321]
+Dchi2cl                       Dchi2cl                       Dchi2cl                       Dchi2cl                                                         'F'    [0.0503599233925,0.999834001064]
+DtktkRes_chi2cl               DtktkRes_chi2cl               DtktkRes_chi2cl               DtktkRes_chi2cl                                                 'F'    [0.0503450036049,0.999168813229]
+Dalpha                        Dalpha                        Dalpha                        Dalpha                                                          'F'    [0.000574055884499,0.198835387826]
 DtktkRes_alpha                DtktkRes_alpha                DtktkRes_alpha                DtktkRes_alpha                                                  'F'    [0.000838859472424,0.199973419309]
-DsvpvDistance/DsvpvDisErr     DsvpvDistance_D_DsvpvDisErr   DsvpvDistance/DsvpvDisErr     DsvpvDistance/DsvpvDisErr                                       'F'    [2.00269937515,350.292114258]
-DtktkRes_svpvDistance/DtktkRes_svpvDisErr   DtktkRes_svpvDistance_D_DtktkRes_svpvDisErr DtktkRes_svpvDistance/DtktkRes_svpvDisErr   DtktkRes_svpvDistance/DtktkRes_svpvDisErr                                                   'F'    [2.00757074356,148.390914917]
+DsvpvDistance/DsvpvDisErr     DsvpvDistance_D_DsvpvDisErr   DsvpvDistance/DsvpvDisErr     DsvpvDistance/DsvpvDisErr                                       'F'    [2.00123548508,2133.9609375]
+DtktkRes_svpvDistance/DtktkRes_svpvDisErr   DtktkRes_svpvDistance_D_DtktkRes_svpvDisErr DtktkRes_svpvDistance/DtktkRes_svpvDisErr   DtktkRes_svpvDistance/DtktkRes_svpvDisErr                                                   'F'    [2.00757074356,333.46270752]
 NSpec 0
 
 
@@ -196,17 +196,17 @@ class ReadLD : public IClassifierReader {
 
 inline void ReadLD::Initialize() 
 {
-   fLDCoefficients.push_back( 0.130938543956 );
-   fLDCoefficients.push_back( 0.00872679155696 );
-   fLDCoefficients.push_back( -0.488760018748 );
-   fLDCoefficients.push_back( -0.491546228843 );
-   fLDCoefficients.push_back( 0.469815124235 );
-   fLDCoefficients.push_back( 0.0985972915473 );
-   fLDCoefficients.push_back( 0.0481181304589 );
-   fLDCoefficients.push_back( -1.82143907019 );
-   fLDCoefficients.push_back( -0.057981503448 );
-   fLDCoefficients.push_back( -1.05162571331e-05 );
-   fLDCoefficients.push_back( 0.00214002089662 );
+   fLDCoefficients.push_back( 0.170737274508 );
+   fLDCoefficients.push_back( 0.00806860795902 );
+   fLDCoefficients.push_back( -0.385968994132 );
+   fLDCoefficients.push_back( -0.38917105117 );
+   fLDCoefficients.push_back( 0.362975660314 );
+   fLDCoefficients.push_back( 0.130574563218 );
+   fLDCoefficients.push_back( 0.0583621542884 );
+   fLDCoefficients.push_back( -1.87835059803 );
+   fLDCoefficients.push_back( -0.240259103628 );
+   fLDCoefficients.push_back( -0.000377556371604 );
+   fLDCoefficients.push_back( 0.00150035175087 );
 
    // sanity check
    if (fLDCoefficients.size() != fNvars+1) {
