@@ -10,7 +10,8 @@ TString evtweight="1";
 //
 //FIXME this is maybe causing the readxml issues. 
 // This is the prescale factor for the D and probably isn't correct for the Bs
-TString hltPrescale="((Btktkpt>8&&Btktkpt<15)*1/(9.740888e+01)+(Btktkpt>15&&Btktkpt<20)*1/(2.594206e+01)+(Btktkpt>20&&Btktkpt<30)*1/(8.305474e+00)+(Btktkpt>30&&Btktkpt<50)*1/(4.070169e+00)+(Btktkpt>50)*1/(1))";
+//TString hltPrescale="((Btktkpt>8&&Btktkpt<15)*1/(9.740888e+01)+(Btktkpt>15&&Btktkpt<20)*1/(2.594206e+01)+(Btktkpt>20&&Btktkpt<30)*1/(8.305474e+00)+(Btktkpt>30&&Btktkpt<50)*1/(4.070169e+00)+(Btktkpt>50)*1/(1))";
+TString hltPrescale="1";
 //TString hltPrescale="1/9.740888e+01";
 
 //Raa=0.49,0.44,0.42,0.41,0.41
@@ -327,7 +328,7 @@ void calRatio(TTree* signal, TTree* background, TTree* generated,
     new TH1D("hfonll",";B p_{T} (GeV/c);FONLL differential xsection",nbin-1,pt);
   for (int i=0;i<nbin;i++) 
       hfonll->SetBinContent(i,central[i]);
-  
+
   TCanvas* cfonll = new TCanvas("cfonll","",600,600);
   hfonll->Draw();
   cfonll->SaveAs(Form("plots/%s_%s_pT_%.0f_%.0f_Fonll.pdf",
@@ -338,11 +339,11 @@ void calRatio(TTree* signal, TTree* background, TTree* generated,
   TH1D* hgen = new TH1D("hgen",";B p_{T} (GeV/c);Generated entries",nbin-1,pt);
   TH1D* heff =
     new TH1D("heff",";B p_{T} (GeV/c);Prefilter efficiency",nbin-1,pt);
-  
+
   if (isPbPb) 
     signal->Project("hrec","Bpt",Form("%s*(%s&&hiBin>=0&&hiBin<=200)*(%s)",
         evtweight.Data(),mycuts.Data(),
-        hltPrescale.Data()));
+        "1"));//hltPrescale.Data()));
   else 
     signal->Project("hrec","Bpt",
         Form("%s*(%s)*(%s)",evtweight.Data(),mycuts.Data(),hltPrescale.Data()));
@@ -370,7 +371,6 @@ void calRatio(TTree* signal, TTree* background, TTree* generated,
 
   heff->Divide(hrec,hgen,1.,1.,"B");
   TCanvas* ceff = new TCanvas("ceff","",600,600);
-
 
   heff->Draw();
   ceff->SaveAs(Form("plots/%s_%s_pT_%.0f_%.0f_EffPrefilter.pdf",

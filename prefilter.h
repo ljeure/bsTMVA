@@ -18,7 +18,7 @@ TString selgen = "TMath::Abs(Gy)<2.4 && abs(GpdgId)==521 && (GisSignal==13 || Gi
 TString inputSname_PP = "/data/bmeson2017/MC/loop_BsMC_PbPb_pthat10.root";
 TString inputBname_PP = "/data/wangj/Data2015/Bntuple/PbPb/Bntuple_BfinderData_PbPb_20160406_bPt5jpsiPt0tkPt0p8_BpB0BsX_skimhlt.root";
 
-TString mycut_PP="TMath::Abs(By)<2.4&&Bmass>5.&&Bmass<6.&&abs(Bmumumass-3.096916)<0.15&&Bchi2cl>0.1&&(Bd0/Bd0Err)>5.&&TMath::Abs(Btktkmass-1.019455)<0.05&&Blxy>0.1";//&&Btrk1Pt>1.5&&Btrk2Pt>1.5&&cos(Bdtheta)>0.8&&Bmu1pt>1.5&&Bmu2pt>1.5&&Bpt>15.0";
+TString mycut_PP="TMath::Abs(By)<2.4&&Bmass>5.&&Bmass<6.";//&&abs(Bmumumass-3.096916)<0.15&&Bchi2cl>0.1&&(Bd0/Bd0Err)>5.&&TMath::Abs(Btktkmass-1.019455)<0.05&&Blxy>0.1&&Btrk1Pt>1.5&&Btrk2Pt>1.5&&cos(Bdtheta)>0.8&&Bmu1pt>1.5&&Bmu2pt>1.5&&Bpt>15.0";
 
 TString mycuts_PP = Form("%s&& Bgen==23333",mycut_PP.Data());
 TString mycutb_PP = Form("%s&& abs(Bmass-5.279)>0.2&&abs(Bmass-5.279)<0.3",mycut_PP.Data());
